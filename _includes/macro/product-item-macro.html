@@ -1,0 +1,25 @@
+{% macro renderProductItem( icon="fa fa-envelope", title="", subtitle="",url="")
+%}
+<div
+  class="group flex animate-twSpin rounded-md bg-surface p-4 text-onSurface shadow-sm hover:shadow-md"
+>
+  <a href="{{ url }}">
+    <div class="shrink-0 animate-delay-1s group-hover:animate-[shakeY_3s]">
+      <div class="rounded-md bg-primary p-4 text-onPrimary">
+        <i class="{{ icon }} fa-2xl text-center leading-3"></i>
+      </div>
+    </div>
+    <div class="ml-4 grow">
+      <p class="mb-1 font-bold">{{ title }}</p>
+      <p class="group-hover:cursor-pointer">
+        {{ subtitle }} ...
+        <a
+          href="{{ url }}"
+          class="group-hover:cursor-pointer group-hover:underline"
+          >Read More</a
+        >
+      </p>
+    </div>
+  </a>
+</div>
+{% endmacro %}

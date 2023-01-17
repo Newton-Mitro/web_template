@@ -1,0 +1,11 @@
+---
+layout: 'layouts/public_layout.njk'
+---
+
+{% import 'macro/banner-macro.html' as macro %} 
+{{
+macro.renderBanner("Home","404",'Resource not found.') 
+}}
+{% include 'partials/public/404/404-content.html' %}
+
+ 

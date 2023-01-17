@@ -1,0 +1,27 @@
+---
+layout: 'layouts/public_layout.njk'
+---
+
+{% import 'macro/banner-macro.html' as macro %} 
+{{
+macro.renderBanner("Home","About Us",'Employment
+Creation is Our Goal; Self-Reliant Community is Our Dream.') 
+}}
+
+
+<div class="clear-both"></div>
+<div class="container mx-auto mb-20 px-4">
+  <section
+    class="flex flex-col-reverse items-start gap-6 text-justify md:flex-row"
+  >
+    {% include 'partials/public/about/about-content.html' %}
+    {% include 'partials/public/_side-navigation.html' %}
+  </section>
+</div>
+
+
+
+
+
+
+

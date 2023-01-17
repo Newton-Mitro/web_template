@@ -1,0 +1,305 @@
+<div
+  class="content w-full bg-surface p-8 text-left text-onBackground shadow-sm md:w-9/12 md:text-justify lg:p-20 lg:text-justify"
+>
+  <div class="animate-slideInUp">
+    <div class="">
+      <ul class="mb-2 flex flex-wrap">
+        <li
+          class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2"
+          x-data="{open: false }"
+        >
+          <div
+            @click=" open = !open"
+            x-model="open"
+            class="flex flex-wrap items-center rounded bg-success p-4 text-onSuccess hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span>Instant Loan</span>
+          </div>
+          <div class="overflow-hidden">
+            <ul
+              class="ease lg:duration-0 divide-y-2 overflow-hidden text-justify transition-all duration-1000"
+              :class="open ?  'max-h-[1000px]' : 'max-h-0 lg:max-h-[1000px]' "
+            >
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Account Number
+                </div>
+                <!-- ml-[90px] md:ml-[94px] lg:ml-[94px] -->
+                <div class="2/5">0051357</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Number
+                </div>
+                <div class="w-2/5">D2022100197286</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Issue Date
+                </div>
+                <div class="w-2/5">1-oct-2022</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Amount
+                </div>
+                <div class="w-2/5">10000 taka</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Interest Rate
+                </div>
+                <div class="w-2/5">15%</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Balance
+                </div>
+                <div class="w-2/5">5000 taka</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Status
+                </div>
+                <div class="w-2/5">Regular</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Maximum Installments
+                </div>
+                <div class="w-2/5">90 Days</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Maturity date
+                </div>
+                <div class="w-2/5">29-Dec-2022</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Recent refund date
+                </div>
+                <div class="w-2/5">28-Oct-2022</div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li
+          class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2"
+          x-data="{open: false }"
+        >
+          <div
+            @click=" open = !open"
+            x-model="open"
+            class="flex flex-wrap items-center rounded bg-success p-4 text-onSuccess hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span>Instant Loan</span>
+          </div>
+          <div class="overflow-hidden">
+            <ul
+              class="ease lg:duration-0 divide-y-2 overflow-hidden text-justify transition-all duration-1000"
+              :class="open ?  'max-h-[1000px]' : 'max-h-0 lg:max-h-[1000px]' "
+            >
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Account Number
+                </div>
+                <!-- ml-[90px] md:ml-[94px] lg:ml-[94px] -->
+                <div class="2/5">0051357</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Number
+                </div>
+                <div class="w-2/5">D2022100197286</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Issue Date
+                </div>
+                <div class="w-2/5">1-oct-2022</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Amount
+                </div>
+                <div class="w-2/5">10000 taka</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Interest Rate
+                </div>
+                <div class="w-2/5">15%</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Balance
+                </div>
+                <div class="w-2/5">5000 taka</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Loan Status
+                </div>
+                <div class="w-2/5">Regular</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Maximum Installments
+                </div>
+                <div class="w-2/5">90 Days</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Maturity date
+                </div>
+                <div class="w-2/5">29-Dec-2022</div>
+              </li>
+              <li
+                class="flex flex-wrap items-center p-2 hover:bg-backgroundVariant"
+              >
+                <div class="w-3/5 text-sm font-bold lg:text-lg">
+                  Recent refund date
+                </div>
+                <div class="w-2/5">28-Oct-2022</div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- <div
+  class="content w-full bg-surface p-8 text-left text-onBackground shadow-sm md:w-9/12 md:p-14 md:text-justify lg:p-20 lg:text-justify"
+>
+  <div class="animate-slideInUp">
+    <h4 class="mb-4 text-xl font-semibold"></h4>
+    <div class="">
+      <ul class="mb-2 flex flex-wrap lg:w-4/5">
+        <li class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2">
+          <div
+            class="flex h-full items-center rounded bg-error p-4 text-onError hover:animate-twPulse hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="title-font font-medium">Credit Ceiling Loan</span>
+          </div>
+        </li>
+        <li class="w-full p-2 text-onSuccess sm:w-1/2 md:w-full lg:w-1/2">
+          <div
+            class="flex h-full items-center rounded bg-success p-4 text-onSuccess hover:animate-twPulse hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="title-font font-medium"
+              >Monthy Savings Projects Loan</span
+            >
+          </div>
+        </li>
+        <li class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2">
+          <div
+            class="flex h-full items-center rounded bg-success p-4 text-onSuccess hover:animate-twPulse hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="title-font font-medium">Instant Loans</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,892 @@
+{# :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full' " #}
+<aside
+  class="h-full bg-surface shadow-sm transition-all duration-300"
+  :class="sidebarOpen ? 'w-80' : 'w-14' "
+>
+  <a
+    href="/pages/content"
+    class="flex h-20 w-full items-center justify-center bg-primaryVariant py-2"
+  >
+    <img
+      src="/assets/images/logo/white_logo.png"
+      alt=""
+      class="w-16 transform transition-all duration-300"
+      :class="sidebarOpen ? '' : 'p-2' "
+    />
+  </a>
+  <div
+    class="flex flex-grow flex-col justify-between overflow-scroll text-onSurface scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-700"
+    style="height: calc(100vh - 80px)"
+  >
+    <ul
+      class="flex cursor-pointer flex-col justify-center divide-y text-onSurface"
+    >
+      <li
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+      >
+        <a href="/" class="flex w-full items-center justify-start py-2 px-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+            />
+          </svg>
+
+          <span class="mx-4 text-lg" x-show="sidebarOpen">Home</span>
+        </a>
+      </li>
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4 text-lg" x-show="sidebarOpen">Info</span>
+          </div>
+          <div class="text-onBackgroundVariant">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class="group-hover:bg-primary group-hover:text-onPrimary"
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href="/dashboard_pages/me"
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"> Me</span>
+              </a>
+            </li>
+
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">
+                  Family and Relatives</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Surety Given to</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"> Card</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4 text-lg" x-show="sidebarOpen">Account</span>
+          </div>
+          <div class="text-onBackgroundVariant">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class="group-hover:bg-primary group-hover:text-onPrimary"
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href="/dashboard_pages/accounts"
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">My Accounts</span>
+              </a>
+            </li>
+
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Open An Account</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4 text-lg" x-show="sidebarOpen">Loan</span>
+          </div>
+          <div class="text-onBackgroundVariant">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class="group-hover:bg-primary group-hover:text-onPrimary"
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">My Loans</span>
+              </a>
+            </li>
+
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Apply For Loan</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4 text-lg" x-show="sidebarOpen">Deposit</span>
+          </div>
+          <div class="text-onBackgroundVariant">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class="group-hover:bg-primary group-hover:text-onPrimary"
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Deposit Now</span>
+              </a>
+            </li>
+
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Deposit Later</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Deposit Via bKash</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Deposit Via Bank</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4 text-lg" x-show="sidebarOpen">Withdraw</span>
+          </div>
+          <div class="text-onBackgroundVariant">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class="group-hover:bg-primary group-hover:text-onPrimary"
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Generate OTQR</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4 text-lg" x-show="sidebarOpen">Transfer</span>
+          </div>
+          <div class="text-onBackgroundVariant">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class="group-hover:bg-primary group-hover:text-onPrimary"
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Transfer To Account</span
+                >
+              </a>
+            </li>
+
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"> Transfer To Bank</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Transfer To bKash</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4 text-lg" x-show="sidebarOpen">Payment</span>
+          </div>
+          <div class="text-onBackgroundVariant">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class="group-hover:bg-primary group-hover:text-onPrimary"
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Service Payment</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4 text-lg" x-show="sidebarOpen">Recruitment</span>
+          </div>
+          <div class="text-onBackgroundVariant">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class="group-hover:bg-primary group-hover:text-onPrimary"
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href="/dashboard_pages/job_circular/"
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Job Circulars</span>
+              </a>
+            </li>
+
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"> Job Applications</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</aside>

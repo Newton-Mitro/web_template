@@ -1,0 +1,26 @@
+{% macro renderCheckBox( question,inputType="" )%}
+
+<div
+  class="relative my-3 w-full justify-between rounded border p-3 text-onSurface"
+  x-data="{ hasValue: '' }"
+>
+  {{ question }}
+  <!-- Do you Have any Dependents? -->
+
+  <input
+    id=""
+    type="{{ inputType }}"
+    value="hasValue"
+    class="ml-4 h-4 w-4 appearance-none rounded"
+  />
+  <label for="" class="w-full py-3 text-sm font-medium">Yes</label>
+
+  <input
+    id=""
+    type="{{ inputType }}"
+    value="hasValue"
+    class="ml-5 h-4 w-4 appearance-none rounded"
+  />
+  <label for="" class="ml-2 w-full py-3 text-sm font-medium">No </label>
+</div>
+{% endmacro %}

@@ -1,0 +1,392 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?v=3.11&sensor=false"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
+      integrity="sha512-Mo79lrQ4UecW8OCcRUZzf0ntfMNgpOFR46Acj2ZtWO8vKhBvD79VCp3VOKSzk6TovLg5evL3Xi3u475Q/jMu4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body
+    x-data="{topNavOpen: false, leftSideNavOpen: false, scrollFromTop: false, loggedIn: false, rightSideNavOpen: false, displayModal: false,displayModalacc: false, loginModelOpen: false ,spinnerModalOpen: false}"
+    @scroll.window="window.pageYOffset > 60 ? scrollFromTop = true : scrollFromTop = false"
+    :class=" {'overflow-hidden' : topNavOpen, 
+    'overflow-auto': !topNavOpen }"
+  >
+    <div
+      id="root"
+      class="relative flex min-h-screen flex-col bg-background font-sans-serif"
+    >
+      {% include 'partials/public/_header.html' %} {{ content | safe }}
+      {% include 'partials/public/_footer.html' %}
+
+      <div class="absolute z-50 flex h-screen flex-col justify-center">
+        <div
+          class="min-h-96 group fixed flex w-80 -translate-x-[280px] transform flex-row items-center duration-300 hover:translate-x-0"
+        >
+          <div
+            class="flex h-full w-full flex-col items-center justify-around rounded-r-md bg-surface p-4 text-onSurface shadow-md"
+          >
+            <div class="text-left">
+              <h2 class="text-2xl font-semibold uppercase antialiased">
+                Job Portal
+              </h2>
+              <p class="text-xs">
+                Dhaka Credit is the first & largest Credit Union of its kind
+                currently in Bangladesh. Join with us.
+              </p>
+            </div>
+            <p class="my-10 w-full text-left font-semibold">
+              No job circular at this moment
+            </p>
+            <div x-show="false" class="">
+              <ul class="my-10 flex w-full flex-col divide-y">
+                <li
+                  class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+                >
+                  <a href="/archives/career/single/circular-details/"
+                    ><p class="antialiased">Software Engineer</p>
+                    <p class="text-xs">BSc in CSE</p></a
+                  >
+                </li>
+                <li
+                  class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+                >
+                  <a href="/archives/career/single/circular-details/"
+                    ><p class="antialiased">Database Administrator</p>
+                    <p class="text-xs">BSc in CSE</p></a
+                  >
+                </li>
+                <li
+                  class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+                >
+                  <a href="/archives/career/single/circular-details/"
+                    ><p class="antialiased">UI/UX Designer and Developer</p>
+                    <p class="text-xs">Diploma in Graphycs</p></a
+                  >
+                </li>
+              </ul>
+              <a
+                href="/archives/career/"
+                class="block text-center hover:font-semibold hover:text-primary"
+                >View All</a
+              >
+            </div>
+          </div>
+          <p
+            class="text-sideways rounded-r-md bg-primary px-2 py-6 text-center capitalize text-onPrimaryVariant shadow-md"
+          >
+            Work With Us
+          </p>
+        </div>
+      </div>
+
+      <div class="absolute right-0 z-50 flex h-screen flex-col justify-center">
+        <div
+          class="group fixed flex w-80 transform cursor-pointer flex-row items-center duration-300"
+          :class="{'-translate-x-10' : !rightSideNavOpen, '-translate-x-80' : rightSideNavOpen }"
+          @click="rightSideNavOpen = !rightSideNavOpen"
+        >
+          <p
+            class="text-sideways rounded-l-md bg-primary px-2 py-6 text-center capitalize text-onPrimaryVariant shadow-md"
+          >
+            Online Transaction
+          </p>
+          <div
+            class="flex h-full w-full flex-col items-center justify-evenly rounded-l-md bg-surface p-4 text-onSurface shadow-md"
+          >
+            <div class="flex w-full justify-start">
+              <button
+                class="absolute top-5 left-auto w-10 font-semibold transition-all duration-300 hover:scale-150 hover:text-error"
+                @click="loginModelOpen=false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="min-h-96 mb-2 flex flex-col items-center gap-1 text-center"
+            >
+              <img
+                class="mb-2 h-16 w-16 rounded-full p-2 shadow"
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
+                alt=""
+              />
+              <p class="font-semibold">Anonymous</p>
+              <div
+                class="flex items-center justify-center text-sm leading-normal text-gray-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-4 w-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                  />
+                </svg>
+                Account Holder/Visitor
+              </div>
+            </div>
+            <ul class="flex w-full flex-col divide-y text-left">
+              <li
+                class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+              >
+                <a href="/dashboard_pages/me"
+                  ><p
+                    class="p-2 font-semibold transition-all duration-300 hover:text-right"
+                  >
+                    Info
+                  </p></a
+                >
+              </li>
+              <li
+                class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+              >
+                <a href="/dashboard_pages/accounts"
+                  ><p
+                    class="p-2 font-semibold transition-all duration-300 hover:text-right"
+                  >
+                    Accounts
+                  </p></a
+                >
+              </li>
+              <li
+                class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+              >
+                <a href="/dashboard_pages/loans-account"
+                  ><p
+                    class="p-2 font-semibold transition-all duration-300 hover:text-right"
+                  >
+                    Loans
+                  </p></a
+                >
+              </li>
+              <li
+                class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+              >
+                <a href="/dashboard_pages/surety"
+                  ><p
+                    class="p-2 font-semibold transition-all duration-300 hover:text-right"
+                  >
+                    Surety
+                  </p></a
+                >
+              </li>
+              <li
+                class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+                @click="displayModal=true"
+              >
+                <div href="">
+                  <p
+                    class="p-2 font-semibold transition-all duration-300 hover:text-right"
+                  >
+                    Deposits
+                  </p>
+                </div>
+              </li>
+              <li
+                class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+                @click="displayModal=true"
+              >
+                <div href="">
+                  <p
+                    class="p-2 font-semibold transition-all duration-300 hover:text-right"
+                  >
+                    Transfer
+                  </p>
+                </div>
+              </li>
+              <li
+                class="overflow-hidden rounded-sm p-1 hover:bg-backgroundVariant hover:shadow-sm"
+                @click="displayModal=true"
+              >
+                <div href="">
+                  <p
+                    class="p-2 font-semibold transition-all duration-300 hover:text-right"
+                  >
+                    Security
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div
+        :class="displayModal? 'translate-x-0' : '-translate-x-full'"
+        class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-gray-900 bg-opacity-95 p-4 text-onSurface transition-all duration-300"
+      >
+        <div
+          class="m-auto w-full overflow-hidden rounded-sm bg-surface shadow-sm md:w-96"
+        >
+          <div
+            class="header flex items-center justify-center border-b p-4 text-2xl font-bold text-onSurface"
+          >
+            <img
+              src="/assets/images/logo/logocccul.png"
+              alt=""
+              width="40"
+              height="40"
+            />
+            <p class="ml-2 antialiased">Dhaka Credit Web Portal</p>
+          </div>
+          <div class="content p-4">
+            <p class="text-center font-semibold">Upcoming Feature...</p>
+          </div>
+          <div class="flex items-center justify-center gap-4 p-4">
+            <button
+              class="w-24 rounded-sm border py-1 font-semibold uppercase shadow-sm hover:bg-primary hover:text-onPrimary"
+              @click="displayModal=false"
+            >
+              OK
+            </button>
+            <button
+              class="w-24 rounded-sm border py-1 font-semibold uppercase shadow-sm hover:bg-primary hover:text-onPrimary"
+              @click="displayModal=false"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section
+        class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-gray-900 bg-opacity-95 p-4 text-onSurface transition-all duration-300"
+        :class="loginModelOpen? 'translate-x-0' : '-translate-x-full'"
+      >
+        <div
+          class="relative w-full overflow-hidden rounded-sm bg-surface py-12 px-6 shadow-sm md:w-3/5 md:px-10 lg:w-2/5 lg:px-20"
+        >
+          <button
+            class="absolute top-5 right-0 w-10 font-semibold transition-all duration-300 hover:scale-150 hover:text-error"
+            @click="loginModelOpen=false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <div class="flex w-full flex-col items-center text-onSurface">
+            <div
+              class="flex w-full flex-col items-center hover:cursor-pointer hover:animate-swing"
+            >
+              <img src="/assets/images/logo/logocccul.png" alt="" />
+              <h2 class="text-center text-2xl font-extrabold uppercase">
+                Member Login
+              </h2>
+              <h3 class="text-center text-sm">Login to your account</h3>
+            </div>
+            <form class="w-full">
+              <div class="my-6">
+                {% import 'macro/text-input-macro.html' as macro %}
+                {{
+                  macro.renderTextInput(
+                    "text",
+                    "",
+                    "Email/Phone ",
+                    "",
+                    "email/Phone"
+                  )
+                }}
+              </div>
+
+              <div
+                class="relative my-3 w-full text-onSurface"
+                x-data="{ hasValue: '',showpassword : false }"
+              >
+                {% import 'macro/showpassword-macro.html' as macro %}
+                {{
+                  macro.renderShowPassword(
+                    "exampleCheck2",
+                    "Show password",
+                    "Forget
+            Password?"
+                  )
+                }}
+              </div>
+
+              <button
+                class="w-full rounded bg-primary py-3 font-bold uppercase text-onPrimary hover:bg-primaryVariant hover:shadow-md"
+                @click="loginModelOpen=false"
+              >
+                Log in
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section
+        class="fixed inset-0 z-50 flex items-center justify-center overflow-auto p-4 text-onSurface transition-all duration-300"
+        :class="spinnerModalOpen? 'animate-fadeIn' : 'animate-fadeOut'"
+        @click="spinnerModalOpen = false"
+      >
+        <div class="relative">
+          <div
+            class="absolute left-1/2 -mt-[100px] -ml-[100px] h-[200px] w-[200px] -rotate-[135deg] transform"
+          >
+            <div class="">
+              <div
+                class="absolute top-[15px] left-[15px] h-[110px] w-[110px] animate-twSpin rounded-[50%] border-[5px] border-solid border-primary border-t-transparent animate-ease animate-infinite animate-delay-[0.6s]"
+              ></div>
+              <div
+                class="absolute left-[25px] top-[25px] h-[90px] w-[90px] animate-twSpin rounded-[50%] border-[5px] border-solid border-primary border-t-transparent animate-ease animate-infinite animate-delay-[0.4s]"
+              ></div>
+              <div
+                class="absolute left-[35px] top-[35px] h-[70px] w-[70px] animate-twSpin rounded-[50%] border-[5px] border-solid border-primary border-t-transparent animate-ease animate-infinite animate-delay-[0.2s]"
+              ></div>
+              <div
+                class="absolute left-[45px] top-[45px] h-[50px] w-[50px] animate-twSpin rounded-[50%] border-[5px] border-solid border-primary border-t-transparent animate-ease animate-infinite"
+              ></div>
+              <img
+                class="absolute left-[58px] top-[62px] w-[20px] rotate-[135deg]"
+                src="/assets/images/logo/logocccul.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

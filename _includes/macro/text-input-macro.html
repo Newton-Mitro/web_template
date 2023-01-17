@@ -1,0 +1,20 @@
+{% macro renderTextInput( inputType="", value="", label="", star="", inputFor=""
+)%}
+<div class="relative my-3 w-full text-onSurface" x-data="{ hasValue: '' }">
+  <input
+    id="{{ inputFor }}"
+    type="{{ inputType }}"
+    x-model="hasValue"
+    class="peer w-full rounded bg-surface transition-colors focus:border-primary"
+  />
+  <label
+    for="{{ inputFor }}"
+    :class="hasValue.length>0 ? '-top-2 text-xs text-primary' : ''"
+    class="absolute left-0 top-3 mx-3 cursor-text bg-surface px-1 text-sm transition-all duration-200 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary"
+  >
+    {{ label }}<span class="font-medium text-error"> {{star}} </span>
+  </label>
+  <p class="mt-1 hidden text-xs text-error" x-text="hasValue.length"></p>
+</div>
+
+{% endmacro %}

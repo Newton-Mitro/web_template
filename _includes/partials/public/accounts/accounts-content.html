@@ -1,0 +1,167 @@
+<div
+  class="content w-full bg-surface p-8 text-left text-onBackground shadow-sm md:w-9/12 md:p-14 md:text-justify lg:p-20 lg:text-justify"
+>
+  <div class="animate-slideInUp">
+    <div>
+      <ul class="mb-2 flex flex-wrap">
+        <li
+          class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2"
+          @click="displayModalacc=true"
+        >
+          <div
+            class="flex h-full items-center rounded bg-success p-4 text-onSuccess hover:animate-twPulse hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="title-font font-medium">Share Account</span>
+          </div>
+        </li>
+
+        <li class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2">
+          <div
+            class="flex h-full items-center rounded bg-error p-4 text-onError hover:animate-twPulse hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="title-font font-medium">Monthy Savings Projects</span>
+          </div>
+        </li>
+        <li class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2">
+          <div
+            class="flex h-full items-center rounded bg-error p-4 text-onError hover:animate-twPulse hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="title-font font-medium">Festival Deposit Scheme</span>
+          </div>
+        </li>
+        <li class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2">
+          <div
+            class="flex h-full items-center rounded bg-error p-4 text-onError hover:animate-twPulse hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="title-font font-medium">Housing Deposit Scheme</span>
+          </div>
+        </li>
+        <li class="w-full p-2 sm:w-1/2 md:w-full lg:w-1/2">
+          <div
+            class="flex h-full items-center rounded bg-error p-4 text-onError hover:animate-twPulse hover:shadow-sm"
+          >
+            <svg
+              class="mr-1.5 h-6 w-6 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="title-font font-medium">Health Care Scheme</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    :class="displayModalacc? 'translate-x-0' : '-translate-x-full'"
+    class="duration-400 fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-gray-900 bg-opacity-90 p-4 text-onSurface transition-all"
+  >
+    <div
+      class="m-auto w-full overflow-hidden rounded-sm bg-surface shadow-sm md:w-[450px]"
+    >
+      <div
+        class="flex items-center justify-center border-b p-4 text-2xl font-bold text-onSurface"
+      >
+        <p class="ml-2 antialiased">Monthly Share Account</p>
+      </div>
+      <div class="content p-4">
+        <ul class="divide-y overflow-hidden text-justify">
+          <li
+            class="flex items-center p-2 transition-colors duration-300 hover:bg-backgroundVariant"
+          >
+            <div class="w-3/5 font-bold">Account Number</div>
+            <div class="w-2/5">T-0060567</div>
+          </li>
+          <li
+            class="flex items-center p-2 transition-colors duration-300 hover:bg-backgroundVariant"
+          >
+            <div class="w-3/5 font-bold">Balance</div>
+            <div class="w-2/5">51357</div>
+          </li>
+          <li
+            class="flex items-center p-2 transition-colors duration-300 hover:bg-backgroundVariant"
+          >
+            <div class="w-3/5 font-bold">Withdrawable Balance</div>
+            <div class="w-2/5">3000</div>
+          </li>
+          <li
+            class="flex items-center p-2 transition-colors duration-300 hover:bg-backgroundVariant"
+          >
+            <div class="w-3/5 font-bold">Nominee</div>
+            <div class="w-2/5 flex-wrap">
+              Driste Maria Palma, Lintas Philip Corraya, Driste Maria Palma
+            </div>
+          </li>
+          <li
+            class="flex items-center p-2 transition-colors duration-300 hover:bg-backgroundVariant"
+          >
+            <div class="w-3/5 font-bold">Last Deposit Date</div>
+            <div class="w-2/5">13-Nov-2022</div>
+          </li>
+        </ul>
+      </div>
+      <div class="flex items-center justify-center gap-4 p-4">
+        <button
+          class="w-24 rounded-sm border bg-primary py-1 font-semibold uppercase text-onPrimary hover:bg-primaryVariant"
+          @click="displayModalacc=false"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

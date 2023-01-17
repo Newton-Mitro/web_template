@@ -1,0 +1,11 @@
+---
+layout: 'layouts/public_layout.njk'
+---
+
+{% import 'macro/banner-macro.html' as macro %} 
+{{
+macro.renderBanner("Home","Importent Notices",'Employment
+Creation is Our Goal; Self-Reliant Community is Our Dream.') 
+}}
+
+{% include 'partials/public/notices/notices-content.html' %}

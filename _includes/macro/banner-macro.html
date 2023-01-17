@@ -1,0 +1,47 @@
+{% macro renderBanner(rootMenu, bannerTitle="The Christian Co-operative Credit
+Union Ltd., Dhaka", bannerSubtitle='Employment Creation is Our Goal;
+Self-Reliant Community is Our Dream.') %}
+<section class="absolute right-0 top-0 w-full text-onPrimary">
+  <div class="relative h-96">
+    <div
+      class="h-full bg-[url('/assets/images/unity1.jpg')] bg-cover bg-center bg-no-repeat"
+    >
+      <div
+        class="absolute inset-0 h-full w-full overflow-hidden bg-gray-900 bg-opacity-80 bg-fixed"
+      >
+        <div class="flex h-full w-full flex-row items-end justify-center">
+          <div class="mb-24 w-full px-6 text-center lg:w-1/2">
+            <h2
+              class="mb-2 animate-backInLeft text-4xl font-bold leading-tight tracking-tight"
+            >
+              {{ bannerTitle }}
+            </h2>
+            <p
+              class="hover:typing-demo inline-block animate-backInRight text-sm"
+            >
+              {{ bannerSubtitle }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto animate-fadeInRight">
+      <div class="relative">
+        <div class="absolute left-0 -bottom-5">
+          <div class="ml-4 flex">
+            <a
+              href=""
+              class="rounded-l-md bg-primaryVariant px-6 py-2 font-semibold"
+              >{{rootMenu}}</a
+            >
+            <a href="" class="rounded-r-md bg-primary px-6 py-2"
+              >{{ bannerTitle }}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endmacro %}

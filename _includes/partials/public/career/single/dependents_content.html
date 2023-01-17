@@ -1,0 +1,42 @@
+<div class="">
+  <div x-data="{ open: false }">
+    <div class="grid grid-cols-1">
+      <div
+        class="relative my-3 w-full justify-between rounded border p-3 text-onSurface"
+        x-data="{ hasValue: '' }"
+      >
+        Do you Have any Dependents?
+
+        <input
+          id=""
+          type="checkbox"
+          value="hasValue"
+          class="ml-4 h-4 w-4 appearance-none rounded"
+          @click="open = !open"
+        />
+        <label for="" class="w-full py-3 text-sm font-medium">Yes</label>
+
+        <div
+          :class="open ? 'max-h-[1000px] p-4' : 'max-h-0' "
+          class="ease overflow-hidden text-justify font-medium transition-all duration-700"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-3 md:gap-5">
+            <div class="grid grid-cols-1">
+              {% import 'macro/text-input-macro.html' as macro %} {{
+              macro.renderTextInput("text", "", "Name", "","name") }}
+            </div>
+            <div class="grid grid-cols-1">
+              {% import 'macro/text-input-macro.html' as macro %} {{
+              macro.renderTextInput("number", "", "Age", "","age") }}
+            </div>
+
+            <div class="grid grid-cols-1">
+              {% import 'macro/select-input-macro.html' as macro %} {{
+              macro.renderSelectInput( "Select Relation", "*", "relation") }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

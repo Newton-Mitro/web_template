@@ -1,0 +1,141 @@
+<div
+  :class="displayModalJobCircular? 'translate-x-0' : '-translate-x-full'"
+  class="duration-400 fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-gray-900 bg-opacity-90 p-4 text-onSurface transition-all"
+>
+  <div
+    class="m-auto w-full overflow-hidden rounded-sm bg-surface shadow-sm md:w-3/5"
+    style="height: calc(100vh - 50px)"
+  >
+    <div class="w-full leading-normal md:border">
+      <div class="sticky top-0 h-20 bg-primary p-6 text-onPrimary md:border">
+        <h6
+          class="text-light text-center text-xl font-semibold uppercase md:text-2xl"
+        >
+          Add Job Circular
+        </h6>
+      </div>
+
+      <div
+        class="w-full overflow-y-scroll rounded-lg border border-dashed bg-backgroundVariant px-16 py-6 text-onSurface scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-200"
+        style="height: calc(100vh - 128px)"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Job Position ","", "jobposition")
+            }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Organization Name ","", "org") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Job Position ","", "jobposition")
+            }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Organization Name ","", "org") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Job Position ","", "jobposition")
+            }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Organization Name ","", "org") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("number", "", "Total Number Vacancy","",
+            "vacancy") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Job Context","", "jobcontext") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Job Responsibility","", "jobres")
+            }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/select-input-macro.html' as macro %} {{
+            macro.renderSelectInput( "Employment Status ","", "employment") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Educational Requirements","",
+            "edureq") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Experience Requirements","",
+            "exreq") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Additional Requirements","",
+            "exreq") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/select-input-macro.html' as macro %} {{
+            macro.renderSelectInput( "Religion","", "religion") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("number", "", "Age","", "age") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Gender","", "age") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Job Location","", "age") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("number", "", "Salary","", "age") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("text", "", "Compensation and Other
+            Benefits","", "benefits") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("date", "", "Application Deadline","",
+            "deadline") }}
+          </div>
+          <div class="grid grid-cols-1">
+            {% import 'macro/text-input-macro.html' as macro %} {{
+            macro.renderTextInput("number", "", "Contact Information","",
+            "contact") }}
+          </div>
+        </div>
+      </div>
+      <div
+        class="sticky bottom-0 h-20 bg-primary text-onPrimary md:border"
+        @click="displayModalJobCircular=false"
+      >
+        <div class="flex items-center justify-center gap-4 p-4">
+          <button
+            class="rounded-sm border bg-primary p-2 py-1 font-semibold uppercase text-onPrimary hover:bg-primaryVariant"
+            @click="displayModalacc=false"
+          >
+            Save
+          </button>
+          <button
+            class="w-24 rounded-sm border bg-primary py-1 font-semibold uppercase text-onPrimary hover:bg-primaryVariant"
+            @click="displayModalacc=false"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

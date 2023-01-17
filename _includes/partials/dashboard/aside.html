@@ -1,0 +1,194 @@
+<aside class="flex first-letter:flex-col">
+  <a
+    href="#"
+    class="inline-flex h-16  items-center justify-center bg-primaryVariant py-3.5 px-2"
+    :class="{'hidden sm:flex sm:flex-col': window.outerWidth > 768}"
+  >
+    <img
+      src="/assets/images/logo/white_logo.png"
+      alt=""
+      class="h-[53px] w-[53px]"
+    />
+  </a>
+  <div
+    class="flex flex-grow flex-col justify-between bg-gray-800 text-onSurface"
+  >
+    <nav class="my-6 flex flex-col">
+      <a
+        href="#"
+        class="inline-flex items-center py-3 px-2 text-white hover:bg-backgroundVariant hover:text-primary"
+        :class="{'justify-start': menu, 'justify-center': menu == false}"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+          />
+        </svg>
+        <span class="ml-1 text-sm" x-show="menu">Management</span>
+
+        <span
+          x-show="menu"
+          :class="open ?   'fa fa-chevron-down' : 'fa fa-chevron-up '"
+          class="fas"
+        ></span>
+      </a>
+      <a
+        x-data="{ open: false }"
+        class="block w-full text-white hover:bg-backgroundVariant hover:text-primary"
+      >
+        <div
+          @click="open = !open"
+          class="flex w-full items-center justify-between py-2 px-2"
+        >
+          <svg
+            aria-hidden="true"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+            />
+          </svg>
+          <span class="mx-4 text-sm" x-show="menu">Dashboard</span>
+          <span
+            x-show="menu"
+            :class="open ?   'fa fa-chevron-down' : 'fa fa-chevron-up '"
+            class="fas"
+          ></span>
+        </div>
+        <div
+          :class="open ? 'max-h-[1000px] p-4' : 'max-h-0' "
+          class="ease overflow-hidden text-justify font-medium transition-all duration-700"
+        >
+          <ul class="space-y-2">
+            <li class="flex hover:text-onSurfaceVariant">
+              <svg
+                class="mr-1.5 mt-1 h-4 w-4 flex-shrink-0 items-start"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Collect
+            </li>
+
+            <li class="flex hover:text-onSurfaceVariant">
+              <svg
+                class="mr-1.5 mt-1 h-4 w-4 flex-shrink-0 items-start"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Original
+            </li>
+            <li class="flex hover:text-onSurfaceVariant">
+              <svg
+                class="mr-1.5 mt-1 h-4 w-4 flex-shrink-0 items-start"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Stamp Size
+            </li>
+          </ul>
+        </div>
+      </a>
+      <a
+        href="#"
+        class="inline-flex items-center py-3 px-2 text-white hover:bg-backgroundVariant hover:text-primary"
+        :class="{'justify-start': menu, 'justify-center': menu == false}"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+          />
+        </svg>
+        <span class="mx-4 text-sm" x-show="menu">TopManagement</span>
+        <span
+          x-show="menu"
+          :class="open ?   'fa fa-chevron-down' : 'fa fa-chevron-up '"
+          class="fas"
+        ></span>
+      </a>
+
+      <a
+        href="#"
+        class="inline-flex items-center py-3 px-2 text-white hover:bg-backgroundVariant hover:text-primary"
+        :class="{'justify-start': menu, 'justify-center': menu == false}"
+      >
+        <svg
+          aria-hidden="true"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          class="h-6 w-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+          />
+        </svg>
+        <span class="mx-4 text-sm" x-show="menu">Dashboard </span>
+      </a>
+    </nav>
+  </div>
+</aside>
+
+
+
+
+
+
+
+ <!-- <div
+      class="flex h-screen bg-background font-sans-serif"s
+      x-data="{panel:false, menu:true}"
+    >
+      {% include 'partials/sidebar.html' %}
+      <div class="">
+        {% include 'partials/_header.html' %} {% include
+        'partials/index/content.html' %} {% include 'partials/_footer.html' %}
+      </div>
+    </div> --!>

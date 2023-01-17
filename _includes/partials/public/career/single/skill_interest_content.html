@@ -1,0 +1,68 @@
+<div class="">
+  <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
+    <div class="grid grid-cols-1">
+      <label
+        for="exampleFormControlTextarea1"
+        class="text-light text-xs uppercase text-onSurface md:text-sm"
+        >Skills</label
+      >
+      <textarea
+        class="mt-1 w-full rounded-lg border py-2 px-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="grid grid-cols-1">
+      <label
+        for="exampleFormControlTextarea1"
+        class="text-light text-xs uppercase text-onSurface md:text-sm"
+        >Interests</label
+      >
+      <textarea
+        class="mt-1 w-full rounded-lg border py-2 px-3 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
+    <div
+      class="my-4 grid w-full grid-cols-1 gap-5 rounded-lg border-2 p-2 md:grid-cols-2 md:gap-8"
+    >
+      <div class="grid grid-cols-1">
+        {% import 'macro/select-input-macro.html' as macro %} {{
+        macro.renderSelectInput( "Select Skill","*", "skill") }}
+      </div>
+      <div class="grid grid-cols-1">
+        {% import 'macro/select-input-macro.html' as macro %} {{
+        macro.renderSelectInput( "Select Proficiency","*", "proficiency") }}
+      </div>
+    </div>
+  </div>
+  <div x-data="{ open: false }">
+    <div
+      class="inline-block rounded-md bg-primary py-2 px-2 font-bold text-onPrimary shadow-sm"
+      x-data="{ hasValue: '' } "
+      @click="open = !open"
+    >
+      Add Skill
+    </div>
+    <div
+      :class="open ? 'max-h-[1000px] p-4' : 'max-h-0' "
+      class="ease overflow-hidden text-justify font-medium transition-all duration-700"
+    >
+      <div
+        class="my-4 grid w-full grid-cols-1 gap-5 rounded-lg border p-2 md:grid-cols-2 md:gap-8"
+      >
+        <div class="grid grid-cols-1">
+          {% import 'macro/select-input-macro.html' as macro %} {{
+          macro.renderSelectInput( "Select Skill","*", "skill") }}
+        </div>
+        <div class="grid grid-cols-1">
+          {% import 'macro/select-input-macro.html' as macro %} {{
+          macro.renderSelectInput( "Select Proficiency","*", "proficiency") }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

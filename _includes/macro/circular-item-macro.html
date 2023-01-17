@@ -1,0 +1,26 @@
+{% macro circularItemRender(circularTitle = 'Trainee Officer (Programming)',
+circularDeadline="August 31, 2022", circularButtonText='View Details') %}
+<div
+  class="group flex flex-col rounded-sm bg-surface p-4 shadow-sm hover:shadow-md group-hover:cursor-pointer"
+>
+  <a
+    href="/archives/career/single/circular-details/"
+    class="group-hover:cursor-pointer"
+  >
+    <h4 class="text-xl">{{ circularTitle }}</h4>
+
+    <p class="text-xs">BSc in CSE</p>
+    <div class="text-xs">
+      <span class="">Deadline: </span>{{ circularDeadline }}
+    </div>
+
+    <div class="text-xs">
+      <a
+        class="text-onSurface group-hover:border-b group-hover:border-primary group-hover:text-primary"
+        href="/archives/career/single/circular-details/"
+        >{{ circularButtonText }}</a
+      >
+    </div>
+  </a>
+</div>
+{% endmacro %}

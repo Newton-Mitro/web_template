@@ -1,0 +1,113 @@
+---
+layout: "layouts/public_layout.njk"
+---
+
+{% import 'macro/banner-macro.html' as macro %}
+{{
+  macro.renderBanner(
+    "Career",
+    "Submit Application",
+    "Dhaka Credit is the first & largest Credit Union of its kind currently in Bangladesh."
+  )
+}}
+
+<div
+  class="container mx-auto mb-20 flex items-center justify-center px-6 text-onBackground"
+>
+  <!--actual component start-->
+  <div x-data="setup()" class="w-full">
+    <ul class="my-4 flex flex-col items-center justify-center md:flex-row">
+      <template x-for="(tab, index) in tabs" :key="index">
+        <li
+          class="w-full cursor-pointer border-b-8 py-2 px-4 md:w-fit"
+          :class="activeTab===index ? 'text-primaryVariant font-extrabold border-primary' : ''"
+          @click="activeTab = index"
+          x-text="tab"
+        ></li>
+      </template>
+    </ul>
+
+    <div
+      class="border bg-surface p-16 px-4 py-10 shadow-sm md:px-6 lg:px-6 lg:py-20"
+    >
+      <div x-show="activeTab===0">
+        {% include 'partials/public/career/single/personal-info-content.html' %}
+      </div>
+      <div x-show="activeTab===1">
+        {% include 'partials/public/career/single/dependents_content.html' %}
+      </div>
+
+      <div x-show="activeTab===2">
+        {% include 'partials/public/career/single/employment_content.html' %}
+      </div>
+      <div x-show="activeTab===3">
+        {% include 'partials/public/career/single/education_content.html' %}
+      </div>
+      <div x-show="activeTab===4">
+        {% include 'partials/public/career/single/training_content.html' %}
+      </div>
+
+      <div x-show="activeTab===5">
+        {% include 'partials/public/career/single/computer_content.html' %}
+      </div>
+      <div x-show="activeTab===6">
+        {% include 'partials/public/career/single/language_content.html' %}
+      </div>
+      <div x-show="activeTab===7">
+        {% include 'partials/public/career/single/othersinfo_content.html' %}
+      </div>
+
+      <div x-show="activeTab===8">
+        {% include 'partials/public/career/single/reference_content.html' %}
+      </div>
+      <div x-show="activeTab===9">
+        {% include 'partials/public/career/single/job_application_content.html' %}
+      </div>
+    </div>
+
+    <div class="flex justify-center gap-4 p-4">
+      <button
+        class="cursor-pointer rounded-md border border-primary py-2 px-4 text-sm font-bold uppercase text-primary hover:bg-primary hover:text-onPrimary hover:shadow"
+        @click="activeTab--"
+        x-show="activeTab>0"
+      >
+        Back
+      </button>
+      <button
+        class="cursor-pointer rounded-md border border-primary py-2 px-4 text-sm font-bold uppercase text-primary hover:bg-primary hover:text-onPrimary hover:shadow"
+        @click="activeTab++"
+        x-show="activeTab<tabs.length-1"
+      >
+        Next
+      </button>
+      <button
+        class="cursor-pointer rounded-md border border-primary py-2 px-4 text-sm font-bold uppercase text-primary hover:bg-primary hover:text-onPrimary hover:shadow"
+        @click="submitApplication"
+        x-show="activeTab===tabs.length-1"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+  <!--actual component end-->
+</div>
+
+<script>
+  function setup() {
+    return {
+      activeTab: 0,
+      tabs: [
+        "Personal",
+        "Dependents",
+        "Employment",
+        "Educational",
+        "Trainings",
+        "Computer",
+        "Language",
+        "Other Info",
+        "References",
+        "Application",
+      ],
+    };
+  }
+</script>

@@ -1,0 +1,15 @@
+---
+layout: "layouts/public_layout.njk"
+---
+
+{% import 'macro/banner-macro.html' as macro %}
+{{
+  macro.renderBanner(
+    "Services",
+    "Cultural Academy",
+    "Employment Creation is Our Goal; Self-Reliant
+Community is Our Dream."
+  )
+}}
+
+{% include 'partials/public/services/single/cultural-academy-content.html' %}
