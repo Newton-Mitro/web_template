@@ -14,8 +14,21 @@
       :class="sidebarOpen ? '' : 'p-2' "
     />
   </a>
+  <div class="p-2">
+    <div class="relative w-full text-onSurface">
+      <input
+        type="text"
+        class="peer w-full rounded bg-surface transition-colors focus:border-primary"
+      />
+      <label
+        class="absolute left-0 top-3 mx-3 cursor-text bg-surface px-1 text-sm transition-all duration-200 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-primary"
+      >
+        Search
+      </label>
+    </div>
+  </div>
   <div
-    class="flex flex-grow flex-col justify-between overflow-scroll text-onSurface scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-700"
+    class="flex flex-grow flex-col justify-between overflow-x-visible overflow-y-scroll text-onSurface scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-700"
     style="height: calc(100vh - 80px)"
   >
     <ul
@@ -40,7 +53,7 @@
             />
           </svg>
 
-          <span class="mx-4 text-lg" x-show="sidebarOpen">Home</span>
+          <span class="mx-4" x-show="sidebarOpen">Home</span>
         </a>
       </li>
       <li
@@ -67,14 +80,14 @@
               />
             </svg>
 
-            <span class="mx-4 text-lg" x-show="sidebarOpen">Info</span>
+            <span class="mx-4" x-show="sidebarOpen">Info</span>
           </div>
-          <div class="text-onBackgroundVariant">
+          <div class="">
             <span
               x-show="sidebarOpen"
               class="pl-2"
               :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class="group-hover:bg-primary group-hover:text-onPrimary"
+              class=""
             ></span>
           </div>
         </div>
@@ -85,7 +98,8 @@
         >
           <ul class="cursor-pointer">
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href="/dashboard_pages/me"
@@ -111,7 +125,8 @@
             </li>
 
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -138,7 +153,8 @@
               </a>
             </li>
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -163,7 +179,8 @@
               </a>
             </li>
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -215,14 +232,14 @@
               />
             </svg>
 
-            <span class="mx-4 text-lg" x-show="sidebarOpen">Account</span>
+            <span class="mx-4" x-show="sidebarOpen">Customer Management</span>
           </div>
-          <div class="text-onBackgroundVariant">
+          <div class="">
             <span
               x-show="sidebarOpen"
               class="pl-2"
               :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class="group-hover:bg-primary group-hover:text-onPrimary"
+              class=""
             ></span>
           </div>
         </div>
@@ -233,7 +250,108 @@
         >
           <ul class="cursor-pointer">
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href="/dashboard_pages/accounts"
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Persons</span>
+              </a>
+            </li>
+
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Organizations</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li
+        x-data="{ open: false }"
+        class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+      >
+        <div
+          @click="open = !open"
+          class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+        >
+          <div class="flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <span class="mx-4" x-show="sidebarOpen"
+              >Subsidiary Ledger Mgmt.</span
+            >
+          </div>
+          <div class="">
+            <span
+              x-show="sidebarOpen"
+              class="pl-2"
+              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
+              class=""
+            ></span>
+          </div>
+        </div>
+
+        <div
+          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+          class="ease transform overflow-hidden text-justify transition-all duration-300"
+        >
+          <ul class="cursor-pointer">
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href="/dashboard_pages/accounts"
@@ -257,9 +375,94 @@
                 <span x-show="sidebarOpen" class="pl-2">My Accounts</span>
               </a>
             </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href="/dashboard_pages/accounts"
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Subsidiary Ledger/Accounts</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Account Opening Requests</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Make A/C Opening Req.</span
+                >
+              </a>
+            </li>
 
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -283,6 +486,194 @@
                 <span x-show="sidebarOpen" class="pl-2">Open An Account</span>
               </a>
             </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Account Closing Requests</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Make A/C Closing Req.</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Close An Account</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Account Statement</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Account Schedules</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Account Collaterals</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Account Cheques</span>
+              </a>
+            </li>
           </ul>
         </div>
       </li>
@@ -311,14 +702,14 @@
               />
             </svg>
 
-            <span class="mx-4 text-lg" x-show="sidebarOpen">Loan</span>
+            <span class="mx-4" x-show="sidebarOpen">General Accounting</span>
           </div>
-          <div class="text-onBackgroundVariant">
+          <div class="">
             <span
               x-show="sidebarOpen"
               class="pl-2"
               :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class="group-hover:bg-primary group-hover:text-onPrimary"
+              class=""
             ></span>
           </div>
         </div>
@@ -329,7 +720,8 @@
         >
           <ul class="cursor-pointer">
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -350,12 +742,13 @@
                     d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
                   />
                 </svg>
-                <span x-show="sidebarOpen" class="pl-2">My Loans</span>
+                <span x-show="sidebarOpen" class="pl-2">Charts Of Account</span>
               </a>
             </li>
 
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -376,7 +769,200 @@
                     d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
                   />
                 </svg>
-                <span x-show="sidebarOpen" class="pl-2">Apply For Loan</span>
+                <span x-show="sidebarOpen" class="pl-2">Ledgers</span>
+              </a>
+            </li>
+
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Debit/Payment Voucher</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Credit/Receipt Voucher</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Non-Cash/Transfer Voucher</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Ledger Statement</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2">Cash Flow Report</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Profit/Loss Report</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href=""
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                  />
+                </svg>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Balance Sheet Report</span
+                >
               </a>
             </li>
           </ul>
@@ -407,14 +993,14 @@
               />
             </svg>
 
-            <span class="mx-4 text-lg" x-show="sidebarOpen">Deposit</span>
+            <span class="mx-4" x-show="sidebarOpen">Deposit</span>
           </div>
-          <div class="text-onBackgroundVariant">
+          <div class="">
             <span
               x-show="sidebarOpen"
               class="pl-2"
               :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class="group-hover:bg-primary group-hover:text-onPrimary"
+              class=""
             ></span>
           </div>
         </div>
@@ -425,7 +1011,8 @@
         >
           <ul class="cursor-pointer">
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -451,7 +1038,8 @@
             </li>
 
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -476,7 +1064,8 @@
               </a>
             </li>
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -501,7 +1090,8 @@
               </a>
             </li>
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -553,14 +1143,14 @@
               />
             </svg>
 
-            <span class="mx-4 text-lg" x-show="sidebarOpen">Withdraw</span>
+            <span class="mx-4" x-show="sidebarOpen">Withdraw</span>
           </div>
-          <div class="text-onBackgroundVariant">
+          <div class="">
             <span
               x-show="sidebarOpen"
               class="pl-2"
               :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class="group-hover:bg-primary group-hover:text-onPrimary"
+              class=""
             ></span>
           </div>
         </div>
@@ -571,7 +1161,8 @@
         >
           <ul class="cursor-pointer">
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -623,14 +1214,14 @@
               />
             </svg>
 
-            <span class="mx-4 text-lg" x-show="sidebarOpen">Transfer</span>
+            <span class="mx-4" x-show="sidebarOpen">Transfer</span>
           </div>
-          <div class="text-onBackgroundVariant">
+          <div class="">
             <span
               x-show="sidebarOpen"
               class="pl-2"
               :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class="group-hover:bg-primary group-hover:text-onPrimary"
+              class=""
             ></span>
           </div>
         </div>
@@ -641,7 +1232,8 @@
         >
           <ul class="cursor-pointer">
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -669,7 +1261,8 @@
             </li>
 
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -694,7 +1287,8 @@
               </a>
             </li>
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -746,14 +1340,14 @@
               />
             </svg>
 
-            <span class="mx-4 text-lg" x-show="sidebarOpen">Payment</span>
+            <span class="mx-4" x-show="sidebarOpen">Payment</span>
           </div>
-          <div class="text-onBackgroundVariant">
+          <div class="">
             <span
               x-show="sidebarOpen"
               class="pl-2"
               :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class="group-hover:bg-primary group-hover:text-onPrimary"
+              class=""
             ></span>
           </div>
         </div>
@@ -764,7 +1358,8 @@
         >
           <ul class="cursor-pointer">
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
@@ -816,14 +1411,14 @@
               />
             </svg>
 
-            <span class="mx-4 text-lg" x-show="sidebarOpen">Recruitment</span>
+            <span class="mx-4" x-show="sidebarOpen">Recruitment</span>
           </div>
-          <div class="text-onBackgroundVariant">
+          <div class="">
             <span
               x-show="sidebarOpen"
               class="pl-2"
               :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class="group-hover:bg-primary group-hover:text-onPrimary"
+              class=""
             ></span>
           </div>
         </div>
@@ -834,7 +1429,8 @@
         >
           <ul class="cursor-pointer">
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href="/dashboard_pages/job_circular/"
@@ -860,7 +1456,8 @@
             </li>
 
             <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
                 href=""
