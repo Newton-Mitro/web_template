@@ -25,7 +25,7 @@
     :class=" {'overflow-hidden' : topNavOpen, 
   'overflow-auto': !topNavOpen }"
   >
-    <div id="root">
+    <div id="root" class="antialiased">
       <div
         class="flex min-h-screen bg-background font-sans-serif"
         x-data="{panel:false,modal: false, sidebarOpen:true}"
@@ -42,7 +42,9 @@
             class="overflow-scroll scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-700"
             style="height: calc(100vh - 144px)"
           >
+          <div class="" style="height: calc(100vh - 258px)">
             {{ content | safe }}
+            </div>
           </section>
           <section id="footer" class="mt-auto h-16 w-full">
             {% include 'partials/dashboard/_footer.html' %}
@@ -52,5 +54,6 @@
       {% include 'partials/dashboard/modals/accounts.html' %} {% include
       'partials/dashboard/modals/add_job_circular.html' %}
     </div>
+
   </body>
 </html>

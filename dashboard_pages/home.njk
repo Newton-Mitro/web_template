@@ -1,0 +1,42 @@
+---
+layout: "layouts/dashboard_layout.njk"
+---
+ <div x-data="{ tab: 1 }" x-cloak class="m-6 text-onSurface">
+   <div class="relative flex flex-col rounded-lg shadow-xm overflow-hidden border">
+     <div class="h-14 bg-white border-b border-gray-200 flex px-4 items-center justify-between">
+       
+       <div class="flex items-center">
+         <div class="w-6 h-6 rounded-full bg-primary"></div>
+         <span class="ml-3">Person Details</span>
+       </div>
+
+       <div class="flex space-x-2 items-center">
+         <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center"><span>+</span></div>
+       </div>
+     </div>
+     <div class="flex space-x-4 bg-primary border-b border-gray-200 px-4">
+       <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2 text-sm tracking-wide font-medium border-transparent" x-on:click="tab = 1" :class="{ 'text-gray-700 border-indigo-500': tab === 1 }">Personal Info</button>
+       <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2 text-sm tracking-wide font-medium border-transparent" x-on:click="tab = 2" :class="{ 'text-gray-700 border-indigo-500': tab === 2 }">Addresses</button>
+       <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2 text-sm tracking-wide font-medium border-transparent" x-on:click="tab = 3" :class="{ 'text-gray-700 border-indigo-500': tab === 3 }">Family & Relatives</button>
+       <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2 text-sm tracking-wide font-medium border-transparent" x-on:click="tab = 4" :class="{ 'text-gray-700 border-indigo-500': tab === 4 }">Job Histories</button>
+       <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2 text-sm tracking-wide font-medium border-transparent" x-on:click="tab = 5" :class="{ 'text-gray-700 border-indigo-500': tab === 5 }">Educations</button>
+       <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2 text-sm tracking-wide font-medium border-transparent" x-on:click="tab = 6" :class="{ 'text-gray-700 border-indigo-500': tab === 6 }">Training</button>
+       <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2 text-sm tracking-wide font-medium border-transparent" x-on:click="tab = 7" :class="{ 'text-gray-700 border-indigo-500': tab === 7 }">Documents</button>
+     </div>
+
+     <div class="overflow-y-scroll bg-surface px-4" style="height: calc(100vh - 290px)">
+       <div x-show="tab === 1">
+          Tab One
+       </div>
+
+       <div x-show="tab === 2">
+         Tab Two
+       </div>
+
+       <div x-show="tab === 3">
+         Tab Three
+       </div>
+
+     </div>
+   </div>
+ </div>
