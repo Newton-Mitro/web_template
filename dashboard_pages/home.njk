@@ -2,14 +2,14 @@
 layout: "layouts/dashboard_layout.njk"
 ---
 <div class="p-2">
-    <div class="inline-flex flex-col justify-center relative text-gray-500 w-3/12 pb-2">
+    <div class="inline-flex flex-col justify-center relative text-gray-500 w-3/12 mb-2">
         <div class="relative w-full">
             <input type="text" class="p-2 pl-8 w-full rounded border border-gray-200 bg-surface focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="search..." />
             <svg class="w-6 h-6 absolute left-2.5 top-2.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
         </div>
-        <ul class="bg-surface invisible border divide-y-2 border-gray-100 w-full absolute top-12 right-0 z-10 max-h-72 overflow-x-scroll">
+        <ul class="bg-surface group:hover:visible border divide-y-2 border-gray-100 w-full absolute top-12 right-0 z-10 max-h-72 overflow-x-scroll">
             <li class="pl-8 pr-2 py-1  relative cursor-pointer hover:bg-yellow-50 hover:text-gray-900">
                 <svg class="stroke-current absolute w-4 h-4 left-2 top-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -78,15 +78,21 @@ layout: "layouts/dashboard_layout.njk"
      <div class="h-14 bg-white border-b border-gray-200 flex px-4 items-center justify-between">
        
        <div class="flex items-center">
-         <div class="w-6 h-6 rounded-full bg-primary"></div>
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+</svg>
+
          <span class="ml-3">Person Details</span>
        </div>
 
-       <div class="flex space-x-2 items-center">
-         <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center"><span>+</span></div>
-       </div>
+       <button class="flex space-x-2 items-center hover:cursor-pointer transition-all duration-300 hover:scale-125">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+</svg>
+
+       </button>
      </div>
-     <div class="flex space-x-4 bg-primary border-b border-gray-200 px-4">
+     <div class="flex space-x-4 bg-primary border-b border-gray-200 px-4 overflow-hidden overflow-x-scroll scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-200">
        <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2  tracking-wide font-medium border-transparent" x-on:click="tab = 1" :class="{ 'text-gray-700 border-indigo-500': tab === 1 }">Personal Info</button>
        <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2  tracking-wide font-medium border-transparent" x-on:click="tab = 2" :class="{ 'text-gray-700 border-indigo-500': tab === 2 }">Addresses</button>
        <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2  tracking-wide font-medium border-transparent" x-on:click="tab = 3" :class="{ 'text-gray-700 border-indigo-500': tab === 3 }">Family & Relatives</button>
@@ -96,7 +102,7 @@ layout: "layouts/dashboard_layout.njk"
        <button type="button" class="focus:outline-none text-gray-400 hover:text-gray-500 py-2 px-1 border-t-2  tracking-wide font-medium border-transparent" x-on:click="tab = 7" :class="{ 'text-gray-700 border-indigo-500': tab === 7 }">Documents</button>
      </div>
 
-     <div class="overflow-y-scroll bg-surface px-4" style="height: calc(100vh - 312px)">
+     <div class="overflow-y-scroll bg-surface px-4" style="height: calc(100vh - 316px)">
        <div x-show="tab === 1">
           Tab One
        </div>
