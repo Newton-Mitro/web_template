@@ -1,17 +1,16 @@
-<div class="h-full w-full p-4">
+<div class="h-full w-full p-2">
   <div
     class="select-none overflow-hidden rounded-lg bg-surface hover:shadow"
     style="height: calc(100vh - 175px)"
   >
     <div class="px-2 pt-6">
       <h2 class="text-center text-xl font-bold uppercase lg:text-2xl">
-        Job Circulars
+        Peoples
       </h2>
     </div>
     <div
-      class="flex h-16 items-center justify-start p-2 text-primary hover:text-primaryVariant md:justify-start"
       @click="displayModalJobCircular=true"
-      class="flex h-16 items-center justify-start p-2 text-primary hover:text-primaryVariant md:justify-start"
+      class="flex h-16 items-center justify-between p-2 text-primary hover:text-primaryVariant"
     >
       <button
         class="flex cursor-pointer items-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant"
@@ -30,8 +29,29 @@
             d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        Post Job Circular
+        Add Person
       </button>
+      <div class="relative w-3/12">
+        <input
+          type="text"
+          class="w-full rounded border border-gray-200 bg-background p-2 pl-8 focus:border-transparent focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary"
+          placeholder="search..."
+        />
+        <svg
+          class="absolute left-2.5 top-2.5 h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+      </div>
     </div>
     <div
       class="mx-2 overflow-hidden overflow-y-scroll scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:border"
