@@ -21,20 +21,9 @@
         class="w-full rounded border border-gray-200 bg-background p-2 pl-8 focus:border-transparent focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary"
         placeholder="search..."
       />
-      <svg
-        class="absolute left-2.5 top-2.5 h-6 w-6"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-        />
-      </svg>
+      <i
+        class="fa-solid fa-magnifying-glass fa-lg absolute left-2.5 top-3.5 py-2"
+      ></i>
     </div>
   </div>
   <div
@@ -47,26 +36,11 @@
       <li
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
       >
-        <a
-          href="/dashboard_pages/"
-          class="flex w-full items-center justify-start py-2 px-4"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-            />
-          </svg>
-
-          <span class="mx-4" x-show="sidebarOpen">Home</span>
+        <a href="/dashboard_pages/" class="flex w-full items-center py-2 px-4">
+          <div class="flex items-center">
+            <i class="fa-brands fa-fort-awesome fa-lg py-2"></i>
+            <span class="mx-4" x-show="sidebarOpen">Home</span>
+          </div>
         </a>
       </li>
 
@@ -78,30 +52,17 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-user-secret fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen">Customer Management</span>
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -120,20 +81,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-child-reaching fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2">Peoples</span>
               </a>
             </li>
@@ -146,20 +94,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-arrows-down-to-people fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2">Person Search</span>
               </a>
             </li>
@@ -173,20 +108,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-building fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2">Organizations</span>
               </a>
             </li>
@@ -201,30 +123,17 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-earth-asia fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen">Online Service Reg.</span>
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -243,20 +152,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-signature fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2">Registerations</span>
               </a>
             </li>
@@ -270,20 +166,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-cash-register fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Make Registration Entry</span
                 >
@@ -301,32 +184,19 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-piggy-bank fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen"
               >Account Application Mgmt.</span
             >
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -345,20 +215,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-piggy-bank fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Make A/C Opening Req.</span
                 >
@@ -373,20 +230,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-piggy-bank fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Account Opening Requests</span
                 >
@@ -402,20 +246,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-piggy-bank fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Make A/C Closing Req.</span
                 >
@@ -430,20 +261,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-piggy-bank fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Account Closing Requests</span
                 >
@@ -458,20 +276,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-file-pen fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Make Info Update Req.</span
                 >
@@ -486,20 +291,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-file-pen fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Information Update Reqests</span
                 >
@@ -514,20 +306,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-piggy-bank fa-lg py-2"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Make A/C Renew Req.</span
                 >
@@ -573,32 +352,19 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-piggy-bank fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen"
               >Subsidiary Ledger Mgmt.</span
             >
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -834,30 +600,17 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-sack-dollar fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen">General Accounting</span>
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -1177,32 +930,19 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-sack-dollar fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen"
               >Subsidiary Voucher Entry</span
             >
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -1334,30 +1074,17 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-address-card fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen">Card Management</span>
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -1432,30 +1159,17 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-handshake fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen">Recruitment</span>
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -1529,30 +1243,18 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
+          <div class="flex items-center">
+            <i class="fa-solid fa-hand fa-lg py-2"></i>
 
             <span class="mx-4" x-show="sidebarOpen">Attendance Management</span>
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
@@ -1599,30 +1301,17 @@
           @click="open = !open"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
-          <div class="flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-
+          <div class="flex items-center">
+            <i class="fa-solid fa-head-side-cough fa-lg py-2"></i>
             <span class="mx-4" x-show="sidebarOpen">Leave Management</span>
           </div>
           <div class="">
-            <span
-              x-show="sidebarOpen"
-              class="pl-2"
-              :class="open ? 'fa fa-chevron-down' : 'fa fa-chevron-up' "
-              class=""
+            <span x-show="sidebarOpen">
+              <template x-if="open">
+                <i class="fa-solid fa-chevron-up fa-lg py-2"></i>
+              </template>
+              <template x-if="!open">
+                <i class="fa-solid fa-chevron-down fa-lg py-2"></i> </template
             ></span>
           </div>
         </div>
