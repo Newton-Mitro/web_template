@@ -34,7 +34,7 @@
     </div>
     <div
       class="mx-2 overflow-hidden overflow-x-scroll overflow-y-scroll scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:border"
-      style="height: calc(100vh - 360px); width: calc(100vw - 350px)"
+      :class="!sidebarOpen ? 'md:w-[calc(100vw-86px)]' : 'md:w-[calc(100vw-350px)]' "
     >
       <table class="table min-w-full">
         <thead class="sticky top-0">

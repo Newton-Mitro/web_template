@@ -30,8 +30,8 @@
       </div>
     </div>
     <div
-      class="mx-2 overflow-auto scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:border"
-      style="height: calc(100vh - 320px); width: calc(100vw - 350px)"
+      class="mx-2 overflow-auto scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:h-[calc(100vh-360px)] md:border"
+      :class="!sidebarOpen ? 'md:w-[calc(100vw-86px)]' : 'md:w-[calc(100vw-350px)]' "
     >
       <table class="whitespace-no-wrap relative w-full table-auto">
         <thead class="w-full">
