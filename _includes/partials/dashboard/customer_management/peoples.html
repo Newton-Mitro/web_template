@@ -1,6 +1,6 @@
 <div class="h-full w-full p-2">
   <div
-    class="select-none overflow-hidden rounded-lg bg-surface hover:shadow"
+    class="select-none rounded-lg bg-surface hover:shadow"
     style="height: calc(100vh - 175px)"
   >
     <div class="px-2 pt-6">
@@ -9,16 +9,16 @@
       </h2>
     </div>
     <div
-      class="flex h-16 items-center justify-between p-2 text-primary hover:text-primaryVariant"
+      class="flex h-16 items-center justify-between gap-4 p-2 text-primary hover:text-primaryVariant"
     >
       <button
         @click="displayModalJobCircular=true"
-        class="flex cursor-pointer items-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant"
+        class="flex w-1/2 cursor-pointer items-center justify-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant lg:w-2/12"
       >
         <i class="fa-solid fa-circle-plus fa-lg mr-2"></i>
         Add Person
       </button>
-      <div class="relative w-3/12 text-gray-500">
+      <div class="relative w-1/2 text-gray-500 lg:w-2/12">
         <input
           type="text"
           class="w-full rounded border border-gray-200 bg-background p-2 pl-8 focus:border-transparent focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary"
@@ -30,38 +30,56 @@
       </div>
     </div>
     <div
-      class="mx-2 overflow-hidden overflow-y-scroll scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:border"
-      style="height: calc(100vh - 320px)"
+      class="mx-2 overflow-auto scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:border"
+      style="height: calc(100vh - 320px); width: calc(100vw - 350px)"
     >
-      <table class="table w-full">
-        <thead class="">
+      <table class="whitespace-no-wrap relative w-full table-auto">
+        <thead class="w-full">
           <tr
             class="sticky -top-0 hidden h-16 w-full bg-surface text-onSurface shadow-sm md:table-row"
           >
             <th class="p-2 text-left">
-              <p>Job Position</p>
+              <p>PIN</p>
             </th>
             <th class="p-2 text-left">
-              <p>Vacancy</p>
+              <p>Full_Name</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>Date_Of_Birth</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>Gender</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>Blood_Group</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>Religion</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>Merital_Status</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>Mobile_Number</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>National_ID_No</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>Birth_Registration_No</p>
+            </th>
+            <th class="p-2 text-left">
+              <p>Profession</p>
             </th>
             <th class="p-2 text-left">
               <p>Education</p>
             </th>
             <th class="p-2 text-left">
-              <p>Experience</p>
-            </th>
-            <th class="p-2 text-left">
-              <p>Salary</p>
-            </th>
-            <th class="p-2 text-left">
-              <p>Published Date</p>
-            </th>
-            <th class="p-2 text-left">
-              <p>job Circular Status</p>
+              <p>Alive</p>
             </th>
 
             <th class="p-2 text-left">
-              <p>Action</p>
+              <p>Actions</p>
             </th>
           </tr>
         </thead>
@@ -72,7 +90,6 @@
       </table>
       <div
         class="sticky bottom-0 flex grow flex-col items-center justify-between gap-2 bg-surface p-2 text-onSurface md:flex-row"
-        id="table-footer"
       >
         <div class="flex items-center">
           <label>Show</label>

@@ -1,4 +1,4 @@
-<div class="h-full w-full p-4">
+<div class="h-full w-full p-2">
   <div
     class="select-none overflow-hidden rounded-lg bg-surface hover:shadow"
     style="height: calc(100vh - 175px)"
@@ -10,10 +10,9 @@
     </div>
     <div
       class="flex h-16 items-center justify-start p-2 text-primary hover:text-primaryVariant md:justify-start"
-      @click="displayModalJobCircular=true"
-      class="flex h-16 items-center justify-start p-2 text-primary hover:text-primaryVariant md:justify-start"
     >
       <button
+        @click="displayModalJobCircular=true"
         class="flex cursor-pointer items-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant"
       >
         <svg
@@ -34,18 +33,18 @@
       </button>
     </div>
     <div
-      class="mx-2 overflow-hidden overflow-y-scroll scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:border"
-      style="height: calc(100vh - 320px)"
+      class="mx-2 overflow-hidden overflow-x-scroll overflow-y-scroll scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:border"
+      style="height: calc(100vh - 360px); width: calc(100vw - 350px)"
     >
-      <table class="table w-full">
-        <thead class="">
+      <table class="table min-w-full">
+        <thead class="sticky top-0">
           <tr
-            class="sticky -top-0 hidden h-16 w-full bg-surface text-onSurface shadow-sm md:table-row"
+            class="hidden h-16 bg-surface text-onSurface shadow-sm md:table-row"
           >
             <th class="p-2 text-left">
               <p>Job Position</p>
             </th>
-            <th class="p-2 text-left">
+            <th class="p-2 text-center">
               <p>Vacancy</p>
             </th>
             <th class="p-2 text-left">
@@ -54,18 +53,20 @@
             <th class="p-2 text-left">
               <p>Experience</p>
             </th>
-            <th class="p-2 text-left">
+            <th class="p-2 text-right">
               <p>Salary</p>
             </th>
             <th class="p-2 text-left">
               <p>Published Date</p>
             </th>
             <th class="p-2 text-left">
-              <p>job Circular Status</p>
+              <p>Deadline</p>
             </th>
-
             <th class="p-2 text-left">
-              <p>Action</p>
+              <p>Circular Status</p>
+            </th>
+            <th class="p-2 text-center">
+              <p>Actions</p>
             </th>
           </tr>
         </thead>
@@ -74,81 +75,80 @@
           {% include 'partials/dashboard/recruitment/data_job_circulars.html' %}
         </tbody>
       </table>
-      <div
-        class="sticky bottom-0 flex grow flex-col items-center justify-between gap-2 bg-surface p-2 text-onSurface md:flex-row"
-        id="table-footer"
-      >
-        <div class="flex items-center">
-          <label>Show</label>
-          <select
-            class="peer mx-1 w-full rounded bg-surface transition-colors focus:border-primary"
-          >
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option value="150">150</option>
-            <option value="-1">All</option>
-          </select>
-          <label>entries</label>
-        </div>
-        <div>Showing 1 to 1 of 7 entries</div>
-        <div class="whitespace-nowrap text-right">
-          <ul class="inline-flex items-center -space-x-px">
-            <li>
-              <a
-                href="#"
-                class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
-              >
-                Previous
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
-                >1</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
-                >2</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                aria-current="page"
-                class="bg-Primary z-10 border px-3 py-2 leading-tight text-onPrimary hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-                >3</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
-                >4</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
-                >5</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
-              >
-                Next
-              </a>
-            </li>
-          </ul>
-        </div>
+    </div>
+    <div
+      class="flex grow flex-col items-center justify-between gap-2 bg-surface p-2 text-onSurface md:flex-row"
+    >
+      <div class="flex items-center">
+        <label>Show</label>
+        <select
+          class="peer mx-1 w-full rounded bg-surface transition-colors focus:border-primary"
+        >
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="150">150</option>
+          <option value="-1">All</option>
+        </select>
+        <label>entries</label>
+      </div>
+      <div>Showing 1 to 1 of 7 entries</div>
+      <div class="whitespace-nowrap text-right">
+        <ul class="inline-flex items-center -space-x-px">
+          <li>
+            <a
+              href="#"
+              class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
+            >
+              Previous
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
+              >1</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
+              >2</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-current="page"
+              class="bg-Primary z-10 border px-3 py-2 leading-tight text-onPrimary hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+              >3</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
+              >4</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
+              >5</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-primary hover:text-onPrimary"
+            >
+              Next
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
