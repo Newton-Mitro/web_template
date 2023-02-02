@@ -8,10 +8,10 @@
     class="flex h-20 w-full items-center justify-center bg-primaryVariant py-2"
   >
     <img
-      src="/assets/images/logo/white_logo.png"
+      src="/assets/images/logo/logo.png"
       alt=""
-      class="w-16 transform transition-all duration-300"
-      :class="sidebarOpen ? '' : 'p-2' "
+      class="transform transition-all duration-300"
+      :class="sidebarOpen ? 'w-36' : 'w-16 p-2' "
     />
   </a>
   <div class="p-2">
@@ -370,20 +370,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-universal-access fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">My Accounts</span>
               </a>
             </li>
@@ -396,20 +383,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-scroll-torah fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Subsidiary Ledger/Accounts</span
                 >
@@ -425,20 +399,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-regular fa-folder-open fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Open An Account</span>
               </a>
             </li>
@@ -452,20 +413,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-house-lock fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Close An Account</span>
               </a>
             </li>
@@ -478,20 +426,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-magnifying-glass-chart fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Account Statement</span>
               </a>
             </li>
@@ -504,20 +439,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-calendar-days fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Account Schedules</span>
               </a>
             </li>
@@ -530,20 +452,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-hand-holding-dollar fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Account Collaterals</span
                 >
@@ -558,20 +467,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-money-check-dollar fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Account Cheques</span>
               </a>
             </li>
@@ -588,7 +484,7 @@
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
-            <i class="fa-solid fa-file-invoice-dollar fa-lg py-3"></i>
+            <i class="fa-solid fa-money-bill-trend-up fa-lg py-3"></i>
             <span class="mx-4" x-show="sidebarOpen">General Accounting</span>
           </div>
           <div class="">
@@ -616,20 +512,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-chart-line fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Charts Of Account</span>
               </a>
             </li>
@@ -643,20 +526,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-receipt fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Ledgers</span>
               </a>
             </li>
@@ -670,20 +540,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-coins fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Debit/Payment Voucher</span
                 >
@@ -698,20 +555,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-coins fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Credit/Receipt Voucher</span
                 >
@@ -726,20 +570,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-coins fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Non-Cash/Transfer Voucher</span
                 >
@@ -754,20 +585,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-coins fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Contra Voucher</span>
               </a>
             </li>
@@ -780,20 +598,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-brands fa-resolving fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Ledger Statement</span>
               </a>
             </li>
@@ -806,20 +611,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-brands fa-resolving fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Trial Balance</span>
               </a>
             </li>
@@ -832,20 +624,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-brands fa-resolving fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Cash Flow Report</span>
               </a>
             </li>
@@ -858,20 +637,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-brands fa-resolving fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Profit/Loss Report</span
                 >
@@ -886,20 +652,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-brands fa-resolving fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Balance Sheet Report</span
                 >
@@ -948,20 +701,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-coins fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Daily Collection</span>
               </a>
             </li>
@@ -974,20 +714,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-coins fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Debit/Payment Voucher</span
                 >
@@ -1002,20 +729,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-coins fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Credit/Receipt Voucher</span
                 >
@@ -1030,20 +744,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-coins fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"
                   >Non-Cash/Transfer Voucher</span
                 >
@@ -1090,20 +791,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-address-card fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Cards</span>
               </a>
             </li>
@@ -1117,20 +805,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-address-card fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"> Transfer To Bank</span>
               </a>
             </li>
@@ -1175,20 +850,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-handshake fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Job Circulars</span>
               </a>
             </li>
@@ -1202,20 +864,7 @@
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                  />
-                </svg>
+                <i class="fa-solid fa-handshake fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2"> Job Applications</span>
               </a>
             </li>
