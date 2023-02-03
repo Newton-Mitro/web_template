@@ -1,6 +1,6 @@
 <div class="h-full w-full p-2">
   <div
-    class="select-none overflow-auto rounded-lg bg-surface scrollbar-thin scrollbar-track-background scrollbar-thumb-primary hover:shadow md:h-[calc(100vh-160px)]"
+    class="select-none overflow-auto rounded-lg bg-surface scrollbar-thin scrollbar-track-background scrollbar-thumb-primary hover:shadow md:min-h-[calc(100vh-160px)]"
   >
     <div class="px-2 pt-6">
       <h2 class="text-center text-xl font-bold uppercase lg:text-2xl">
@@ -12,24 +12,19 @@
     >
       <button
         @click="displayModalJobCircular=true"
-        class="flex w-1/2 cursor-pointer items-center justify-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant lg:w-2/12"
+        class="flex w-1/4 cursor-pointer items-center justify-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant lg:w-2/12"
       >
         <i class="fa-solid fa-circle-plus fa-lg mr-2"></i>
         Add Person
       </button>
-      <div class="relative w-1/2 text-gray-500 lg:w-2/12">
-        <input
-          type="text"
-          class="w-full rounded border border-gray-200 bg-background p-2 pl-8 focus:border-transparent focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary"
-          placeholder="search..."
-        />
-        <i
-          class="fa-solid fa-magnifying-glass fa-lg absolute left-2.5 top-3.5 py-2"
-        ></i>
+      <div class="flex w-3/4 justify-end gap-4">
+        {% include
+        'partials/dashboard/customer_management/peoples/person_search_box.html'
+        %}
       </div>
     </div>
     <div
-      class="mx-2 overflow-auto rounded scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:h-[calc(100vh-355px)]"
+      class="mx-2 overflow-auto rounded scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:min-h-[calc(100vh-355px)]"
       :class="!sidebarOpen ? 'md:w-[calc(100vw-86px)]' : 'md:w-[calc(100vw-350px)]' "
     >
       <table
@@ -86,8 +81,8 @@
         </thead>
 
         <tbody class="flex-1 bg-backgroundVariant sm:flex-none">
-          {% include 'partials/dashboard/customer_management/data_peoples.html'
-          %}
+          {% include
+          'partials/dashboard/customer_management/peoples/data_peoples.html' %}
         </tbody>
       </table>
     </div>

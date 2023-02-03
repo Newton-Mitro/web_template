@@ -1,11 +1,14 @@
 {% macro renderTextInput( inputType="", value="", label="", star="", inputFor=""
 )%}
-<div class="relative my-3 w-full text-onSurface" x-data="{ hasValue: '' }">
+<div
+  class="relative w-full text-onSurface text-gray-500"
+  x-data="{ hasValue: '' }"
+>
   <input
     id="{{ inputFor }}"
     type="{{ inputType }}"
     x-model="hasValue"
-    class="peer w-full rounded bg-surface transition-colors focus:border-primary"
+    class="peer w-full rounded border-gray-200 bg-surface transition-colors focus:border-primary"
   />
   <label
     for="{{ inputFor }}"

@@ -1,0 +1,67 @@
+{% import 'shared/components/text-input-macro.html' as macro %}
+<div x-data="showImage()" class="">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <label class="inline-block text-gray-500">Person Photo</label>
+      <div class="flex w-full items-center justify-center">
+        <label
+          class="relative flex h-32 w-full flex-col items-center justify-center border-4 border-dashed hover:border-gray-300 hover:bg-gray-100"
+        >
+          <div class="flex h-full w-full flex-col items-center justify-center">
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center"
+            >
+              <i class="fa-solid fa-image fa-2xl"></i>
+              <p
+                class="pt-4 text-sm tracking-wider text-gray-400 group-hover:text-gray-600"
+              >
+                Select a photo
+              </p>
+            </div>
+            <img id="preview" class="h-full" />
+          </div>
+          <input
+            type="file"
+            class="opacity-0"
+            accept="image/*"
+            @change="showPreview(event)"
+          />
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2 lg:grid-cols-4">
+  {{ macro.renderTextInput("text", "", "Personal Identification", "", "_pin") }}
+  {{ macro.renderTextInput("text", "", "Full Name", "", "full_name") }} {{
+  macro.renderTextInput("text", "", "Select Date Of Birth", "", "DateOfBirth")
+  }} {{ macro.renderTextInput("text", "", "Birth Registration Number", "",
+  "BirthRegistrationNumber") }} {{ macro.renderTextInput("text", "", "Contact
+  Number", "", "ContactNumber") }} {{ macro.renderTextInput("text", "",
+  "Alternet Contact Number", "", "AlternetContactNumber") }} {{
+  macro.renderTextInput("text", "", "Emergency Contact Number", "",
+  "EmergencyContactNumber") }} {{ macro.renderTextInput("email", "", "Email",
+  "", "Email") }}{{ macro.renderTextInput("text", "", "Select Blood Group", "",
+  "BloodGroupCode") }}{{ macro.renderTextInput("text", "", "Select Gender", "",
+  "GenderCode") }}{{ macro.renderTextInput("text", "", "Select Religion", "",
+  "ReligionCode") }}{{ macro.renderTextInput("text", "", "Select Profession",
+  "", "ProfessionCode") }}{{ macro.renderTextInput("text", "", "Select Marital
+  Status", "", "MaritalStatusCode") }}{{ macro.renderTextInput("text", "",
+  "Select Educational Degree", "", "EducationalDegreeCode") }}{{
+  macro.renderTextInput("text", "", "Alive", "", "Alive") }}
+</div>
+
+<script>
+  function showImage() {
+    return {
+      showPreview(event) {
+        if (event.target.files.length > 0) {
+          var src = URL.createObjectURL(event.target.files[0]);
+          var preview = document.getElementById("preview");
+          preview.src = src;
+          preview.style.display = "block";
+        }
+      },
+    };
+  }
+</script>
