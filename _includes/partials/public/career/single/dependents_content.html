@@ -22,17 +22,17 @@
         >
           <div class="grid grid-cols-1 md:grid-cols-3 md:gap-5">
             <div class="grid grid-cols-1">
-              {% import 'macro/text-input-macro.html' as macro %} {{
+              {% import 'shared/components/text-input-macro.html' as macro %} {{
               macro.renderTextInput("text", "", "Name", "","name") }}
             </div>
             <div class="grid grid-cols-1">
-              {% import 'macro/text-input-macro.html' as macro %} {{
+              {% import 'shared/components/text-input-macro.html' as macro %} {{
               macro.renderTextInput("number", "", "Age", "","age") }}
             </div>
 
             <div class="grid grid-cols-1">
-              {% import 'macro/select-input-macro.html' as macro %} {{
-              macro.renderSelectInput( "Select Relation", "*", "relation") }}
+              {% import 'shared/components/select-input-macro.html' as macro %}
+              {{ macro.renderSelectInput( "Select Relation", "*", "relation") }}
             </div>
           </div>
         </div>

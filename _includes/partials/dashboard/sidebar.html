@@ -1,6 +1,6 @@
 {# :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full' " #}
 <aside
-  class="h-full bg-surface shadow-sm transition-all duration-300"
+  class="h-full bg-surface shadow-sm transition-all duration-700"
   :class="sidebarOpen ? 'w-80' : 'w-14' "
 >
   <a
@@ -10,7 +10,7 @@
     <img
       src="/assets/images/logo/logo.png"
       alt=""
-      class="transform transition-all duration-300"
+      class="transform transition-all duration-700"
       :class="sidebarOpen ? 'w-36' : 'w-16 p-2' "
     />
   </a>
@@ -31,6 +31,7 @@
     style="height: calc(100vh - 140px)"
   >
     <ul
+      x-data="{ open: 0 }"
       class="flex cursor-pointer flex-col justify-center divide-y divide-dashed text-onSurface"
     >
       <li
@@ -45,11 +46,10 @@
       </li>
 
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 1 ? open = 1 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -58,20 +58,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===1">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=1">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container1">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -116,11 +116,10 @@
         </div>
       </li>
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 2 ? open = 2 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -129,20 +128,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===2">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=2">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container2">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -177,11 +176,10 @@
       </li>
 
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 3 ? open = 3 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -192,20 +190,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===3">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=3">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container3">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -332,11 +330,10 @@
       </li>
 
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 4 ? open = 4 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -347,20 +344,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===4">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=4">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container4">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -476,11 +473,10 @@
       </li>
 
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 5 ? open = 5 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -489,20 +485,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===5">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=5">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container5">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -663,11 +659,10 @@
       </li>
 
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 6 ? open = 6 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -678,20 +673,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===6">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=6">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container6">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -755,11 +750,10 @@
       </li>
 
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 7 ? open = 7 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -768,20 +762,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===7">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=7">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container7">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -814,11 +808,10 @@
       </li>
 
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 8 ? open = 8 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -827,20 +820,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===8">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=8">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container8">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -872,11 +865,10 @@
         </div>
       </li>
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 9 ? open = 9 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -886,20 +878,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===9">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=9">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 9 ? 'max-height: ' + $refs.container9.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container9">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
@@ -930,11 +922,10 @@
         </div>
       </li>
       <li
-        x-data="{ open: false }"
         class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
       >
         <div
-          @click="open = !open"
+          @click="open !== 10 ? open = 10 : open = 0"
           class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
         >
           <div class="flex items-center">
@@ -943,20 +934,20 @@
           </div>
           <div class="">
             <span x-show="sidebarOpen">
-              <template x-if="open">
-                <i class="fa-solid fa-chevron-up fa-lg py-3"></i>
+              <template x-if="open===10">
+                <i class="fa-solid fa-chevron-up"></i>
               </template>
-              <template x-if="!open">
-                <i class="fa-solid fa-chevron-down fa-lg py-3"></i> </template
+              <template x-if="open!=10">
+                <i class="fa-solid fa-chevron-down"></i> </template
             ></span>
           </div>
         </div>
 
         <div
-          :class="open ? 'max-h-[1000px]' : 'max-h-0' "
-          class="ease transform overflow-hidden text-justify transition-all duration-300"
+          x-bind:style="open == 10 ? 'max-height: ' + $refs.container10.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+          class="overflow-hidden text-justify transition-all duration-700"
         >
-          <ul class="cursor-pointer">
+          <ul class="cursor-pointer" x-ref="container10">
             <li
               class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "

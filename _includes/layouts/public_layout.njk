@@ -311,7 +311,7 @@
             <div
               class="flex w-full flex-col items-center hover:cursor-pointer hover:animate-swing"
             >
-              <img src="/assets/images/logo/logo.png" alt="" />
+              <img src="/assets/images/logo/logo_dark.png" alt="" class="w-52" />
               <h2 class="text-center text-2xl font-extrabold uppercase">
                 Member Login
               </h2>
@@ -319,7 +319,7 @@
             </div>
             <form class="w-full">
               <div class="my-6">
-                {% import 'macro/text-input-macro.html' as macro %}
+                {% import 'shared/components/text-input-macro.html' as macro %}
                 {{
                   macro.renderTextInput(
                     "text",
@@ -335,7 +335,7 @@
                 class="relative my-3 w-full text-onSurface"
                 x-data="{ hasValue: '',showpassword : false }"
               >
-                {% import 'macro/showpassword-macro.html' as macro %}
+                {% import 'shared/components/showpassword-macro.html' as macro %}
                 {{
                   macro.renderShowPassword(
                     "exampleCheck2",

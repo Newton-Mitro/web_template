@@ -38,22 +38,22 @@
 </div>
 
 <div class="grid grid-cols-1">
-  {% import 'macro/checkbox-item-macro.html' as macro %} {{
+  {% import 'shared/components/checkbox-item-macro.html' as macro %} {{
   macro.renderCheckBox("Are you willing to join any Department/Service
   Center/Project/Strategic Location of the CCCUL?","checkbox") }}
 </div>
 <div class="grid grid-cols-1">
-  {% import 'macro/checkbox-item-macro.html' as macro %} {{
+  {% import 'shared/components/checkbox-item-macro.html' as macro %} {{
   macro.renderCheckBox("Are you willing to accept transfer to any of the Service
   Centers/Projects of Dhaka Credit?","checkbox") }}
 </div>
 <div class="grid grid-cols-1">
-  {% import 'macro/checkbox-item-macro.html' as macro %} {{
+  {% import 'shared/components/checkbox-item-macro.html' as macro %} {{
   macro.renderCheckBox("Are you physically fit for extensive travel (if
   required) at any location?","checkbox") }}
 </div>
 <div class="grid grid-cols-1">
-  {% import 'macro/checkbox-item-macro.html' as macro %} {{
+  {% import 'shared/components/checkbox-item-macro.html' as macro %} {{
   macro.renderCheckBox("Are you a member of Dhaka Credit?","checkbox") }}
 </div>
 
@@ -64,20 +64,20 @@
   Do you have any relative working at the CCCUL? If yes, please mention below:
   <div class="grid grid-cols-1 md:grid-cols-4 md:gap-8">
     <div class="grid grid-cols-1">
-      {% import 'macro/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/text-input-macro.html' as macro %} {{
       macro.renderTextInput("text", "", "Name","", "name") }}
     </div>
     <div class="grid grid-cols-1">
-      {% import 'macro/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/text-input-macro.html' as macro %} {{
       macro.renderTextInput("text", "", "Designation/Position", "", "des/p") }}
     </div>
 
     <div class="grid grid-cols-1">
-      {% import 'macro/select-input-macro.html' as macro %} {{
+      {% import 'shared/components/select-input-macro.html' as macro %} {{
       macro.renderSelectInput( "Select Relationship","*", "gender") }}
     </div>
     <div class="grid grid-cols-1">
-      {% import 'macro/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/text-input-macro.html' as macro %} {{
       macro.renderTextInput("number", "", "Contact Number", "", "contact") }}
     </div>
   </div>
@@ -91,19 +91,19 @@
   years? If yes, please mention below:
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
     <div class="grid grid-cols-1">
-      {% import 'macro/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/text-input-macro.html' as macro %} {{
       macro.renderTextInput("text", "", "Name of the Position","",
       "nameofposition") }}
     </div>
     <div class="grid grid-cols-1">
-      {% import 'macro/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/text-input-macro.html' as macro %} {{
       macro.renderTextInput("date", "", "Date of Application: ", "", "date") }}
     </div>
   </div>
 </div>
 
 <div class="grid grid-cols-1">
-  {% import 'macro/checkbox-item-macro.html' as macro %} {{
+  {% import 'shared/components/checkbox-item-macro.html' as macro %} {{
   macro.renderCheckBox("Have you any objections to our making inquiries of your
   present employer?","checkbox") }}
 </div>

@@ -11,7 +11,7 @@
         <h3 class="text-center text-lg font-normal">to your account</h3>
         <form>
           <div class="mb-6">
-            {% import 'macro/text-input-macro.html' as macro %} {{
+            {% import 'shared/components/text-input-macro.html' as macro %} {{
             macro.renderTextInput("text", "", "Email/Phone ", "", "email/Phone")
             }}
           </div>
@@ -20,7 +20,7 @@
             class="relative my-3 w-full text-onSurface"
             x-data="{ hasValue: '',showpassword : false }"
           >
-            {% import 'macro/showpassword-macro.html' as macro %} {{
+            {% import 'shared/components/showpassword-macro.html' as macro %} {{
             macro.renderShowPassword("exampleCheck2","Show password","Forget
             Password?") }}
           </div>

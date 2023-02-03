@@ -25,40 +25,40 @@
       </button>
     </div>
     <div class="grid grid-cols-1">
-      {% import 'macro/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/text-input-macro.html' as macro %} {{
       macro.renderTextInput("text", "", "Name of Organization & Address", "",
       "nofo") }}
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
       <div class="grid grid-cols-1">
-        {% import 'macro/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/text-input-macro.html' as macro %} {{
         macro.renderTextInput("date", "", "From Joining Date", " ", "join") }}
       </div>
       <div class="grid grid-cols-1">
-        {% import 'macro/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/text-input-macro.html' as macro %} {{
         macro.renderTextInput("date", "", "To Resigning Date", "", "resigning")
         }}
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
       <div class="grid grid-cols-1">
-        {% import 'macro/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/text-input-macro.html' as macro %} {{
         macro.renderTextInput("text", "", "Position", "", "position") }}
       </div>
       <div class="grid grid-cols-1">
-        {% import 'macro/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/text-input-macro.html' as macro %} {{
         macro.renderTextInput("number", "", "Salary", "", "salary") }}
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
       <div class="grid grid-cols-1">
-        {% import 'macro/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/text-input-macro.html' as macro %} {{
         macro.renderTextInput("number", "", "Number of Employees Supervised by
         You ", "", "noesby") }}
       </div>
       <div class="grid grid-cols-1">
-        {% import 'macro/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/text-input-macro.html' as macro %} {{
         macro.renderTextInput("text", "", "Reason of Leaving", "", "rofl") }}
       </div>
     </div>
