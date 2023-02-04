@@ -3,7 +3,8 @@
     class="mb-2 flex w-full items-center gap-4 rounded-lg bg-surface p-2 hover:shadow"
   >
     {% include
-    'partials/dashboard/customer_management/peoples/person_search_box.html' %}
+    'partials/dashboard/customer_management/search_customer/customer_search_box.html'
+    %}
   </div>
 
   <div x-data="{ tab: 1 }" x-cloak class="text-onSurface">
@@ -90,37 +91,37 @@
       >
         <div x-show="tab === 1" class="py-4 px-2">
           {% include
-          'partials/dashboard/customer_management/peoples/sections/person_details.html'
+          'partials/dashboard/customer_management/search_customer/sections/person_details.html'
           %}
         </div>
         <div x-show="tab === 2" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/peoples/sections/addresses.html'
+          'partials/dashboard/customer_management/search_customer/sections/addresses.html'
           %}
         </div>
         <div x-show="tab === 3" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/peoples/sections/family_and_relatives.html'
+          'partials/dashboard/customer_management/search_customer/sections/family_and_relatives.html'
           %}
         </div>
         <div x-show="tab === 4" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/peoples/sections/job_histories.html'
+          'partials/dashboard/customer_management/search_customer/sections/job_histories.html'
           %}
         </div>
         <div x-show="tab === 5" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/peoples/sections/educations.html'
+          'partials/dashboard/customer_management/search_customer/sections/educations.html'
           %}
         </div>
         <div x-show="tab === 6" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/peoples/sections/trainings.html'
+          'partials/dashboard/customer_management/search_customer/sections/trainings.html'
           %}
         </div>
         <div x-show="tab === 7" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/peoples/sections/documents.html'
+          'partials/dashboard/customer_management/search_customer/sections/documents.html'
           %}
         </div>
       </div>

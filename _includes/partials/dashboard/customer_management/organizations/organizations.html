@@ -4,7 +4,7 @@
   >
     <div class="px-2 pt-6">
       <h2 class="text-center text-xl font-bold uppercase lg:text-2xl">
-        Peoples
+        Organizations
       </h2>
     </div>
     <div
@@ -15,7 +15,7 @@
         class="flex w-1/4 cursor-pointer items-center justify-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant lg:w-2/12"
       >
         <i class="fa-solid fa-circle-plus fa-lg mr-2"></i>
-        Add Person
+        Add Organization
       </button>
       <div class="flex w-3/4 justify-end gap-4">
         {% include
@@ -82,7 +82,8 @@
 
         <tbody class="flex-1 bg-backgroundVariant sm:flex-none">
           {% include
-          'partials/dashboard/customer_management/peoples/data_peoples.html' %}
+          'partials/dashboard/customer_management/organizations/data_organizations.html'
+          %}
         </tbody>
       </table>
     </div>

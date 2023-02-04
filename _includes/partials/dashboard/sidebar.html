@@ -90,26 +90,25 @@
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
-                href="/dashboard_pages/search_person"
-                class="flex w-full"
-                :class="sidebarOpen ? 'pl-10' : '' "
-              >
-                <i class="fa-solid fa-arrows-down-to-people fa-lg py-3"></i>
-                <span x-show="sidebarOpen" class="pl-2">Person Search</span>
-              </a>
-            </li>
-
-            <li
-              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
-              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
-            >
-              <a
-                href=""
+                href="/dashboard_pages/organizations"
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
                 <i class="fa-solid fa-building fa-lg py-3"></i>
                 <span x-show="sidebarOpen" class="pl-2">Organizations</span>
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href="/dashboard_pages/search_customer"
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <i class="fa-solid fa-arrows-down-to-people fa-lg py-3"></i>
+                <span x-show="sidebarOpen" class="pl-2">Search Customer</span>
               </a>
             </li>
           </ul>
