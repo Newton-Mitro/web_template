@@ -1,0 +1,34 @@
+{% import 'shared/components/text-input-macro.html' as textInput %} {% import
+'shared/components/image-input.html' as imageInput %}
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+  {{ imageInput.renderImageInput("org_logo", "Organization Logo") }}
+</div>
+
+<div class="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2 lg:grid-cols-4">
+  {{ textInput.renderTextInput("text", "", "Organization PIN", "", "org_pin") }}
+  {{ textInput.renderTextInput("text", "", "Organization Code", "", "org_code")
+  }} {{ textInput.renderTextInput("text", "", "Organization Name", "",
+  "org_name") }} {{ textInput.renderTextInput("text", "", "Email", "",
+  "org_email") }} {{ textInput.renderTextInput("text", "", "Phone", "",
+  "org_phone") }} {{ textInput.renderTextInput("text", "", "Mobile", "",
+  "org_mobile") }} {{ textInput.renderTextInput("text", "", "Address", "",
+  "org_address") }} {{ textInput.renderTextInput("text", "", "Fax", "",
+  "org_fax") }}{{ textInput.renderTextInput("text", "", "Website", "",
+  "org_website") }}{{ textInput.renderTextInput("text", "", "Select Status", "",
+  "status") }}
+</div>
+
+<script>
+  function showImage() {
+    return {
+      showPreview(event) {
+        if (event.target.files.length > 0) {
+          var src = URL.createObjectURL(event.target.files[0]);
+          var preview = document.getElementById("preview");
+          preview.src = src;
+          preview.style.display = "block";
+        }
+      },
+    };
+  }
+</script>

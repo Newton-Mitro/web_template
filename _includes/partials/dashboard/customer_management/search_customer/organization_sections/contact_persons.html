@@ -1,0 +1,18 @@
+{% import 'shared/components/text-input-macro.html' as macro %}
+
+<div
+  class="relative mt-4 grid grid-cols-1 gap-4 border border-dashed p-4 md:grid-cols-2 lg:grid-cols-4"
+>
+  {{ macro.renderTextInput("text", "", "Relative Name", "", "RelativePIN") }} {{
+  macro.renderTextInput("text", "", "Select Relationship With Relative", "",
+  "RelationshipWithRelative") }} {{ macro.renderTextInput("text", "", "City",
+  "", "City") }}
+</div>
+<div class="flex justify-end p-4">
+  <button
+    type="button"
+    class="w-1/2 rounded bg-primary py-2 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant md:w-3/12"
+  >
+    Add Another
+  </button>
+</div>

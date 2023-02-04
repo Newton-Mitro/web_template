@@ -1,6 +1,6 @@
 {# :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full' " #}
 <aside
-  class="h-full bg-surface shadow-sm transition-all duration-700"
+  class="h-full bg-surface shadow-sm transition-all duration-300"
   :class="sidebarOpen ? 'w-80' : 'w-14' "
 >
   <a
@@ -103,12 +103,29 @@
               :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
             >
               <a
-                href="/dashboard_pages/search_customer"
+                href="/dashboard_pages/search_customer_person"
                 class="flex w-full"
                 :class="sidebarOpen ? 'pl-10' : '' "
               >
                 <i class="fa-solid fa-arrows-down-to-people fa-lg py-3"></i>
-                <span x-show="sidebarOpen" class="pl-2">Search Customer</span>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Search Customer (Person)</span
+                >
+              </a>
+            </li>
+            <li
+              class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+              :class="sidebarOpen ? 'hover:-translate-x-10' : '' "
+            >
+              <a
+                href="/dashboard_pages/search_customer_organization"
+                class="flex w-full"
+                :class="sidebarOpen ? 'pl-10' : '' "
+              >
+                <i class="fa-solid fa-arrows-down-to-people fa-lg py-3"></i>
+                <span x-show="sidebarOpen" class="pl-2"
+                  >Search Customer (Org)</span
+                >
               </a>
             </li>
           </ul>

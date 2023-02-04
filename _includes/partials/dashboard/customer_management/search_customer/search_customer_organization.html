@@ -14,7 +14,7 @@
       >
         <div class="flex items-center">
           <i class="fa-solid fa-circle-info fa-lg"></i>
-          <span class="ml-3">Person Details</span>
+          <span class="ml-3">Organization Details</span>
         </div>
 
         <button
@@ -33,7 +33,7 @@
           x-on:click="tab = 1"
           :class="{ 'text-gray-700 border-indigo-500': tab === 1 }"
         >
-          Personal Info
+          Organization Info
         </button>
         <button
           type="button"
@@ -41,7 +41,7 @@
           x-on:click="tab = 2"
           :class="{ 'text-gray-700 border-indigo-500': tab === 2 }"
         >
-          Addresses
+          Contact Persons
         </button>
         <button
           type="button"
@@ -49,37 +49,13 @@
           x-on:click="tab = 3"
           :class="{ 'text-gray-700 border-indigo-500': tab === 3 }"
         >
-          Family & Relatives
+          Branches
         </button>
         <button
           type="button"
           class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
           x-on:click="tab = 4"
           :class="{ 'text-gray-700 border-indigo-500': tab === 4 }"
-        >
-          Job Histories
-        </button>
-        <button
-          type="button"
-          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
-          x-on:click="tab = 5"
-          :class="{ 'text-gray-700 border-indigo-500': tab === 5 }"
-        >
-          Educations
-        </button>
-        <button
-          type="button"
-          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
-          x-on:click="tab = 6"
-          :class="{ 'text-gray-700 border-indigo-500': tab === 6 }"
-        >
-          Training
-        </button>
-        <button
-          type="button"
-          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
-          x-on:click="tab = 7"
-          :class="{ 'text-gray-700 border-indigo-500': tab === 7 }"
         >
           Documents
         </button>
@@ -91,37 +67,22 @@
       >
         <div x-show="tab === 1" class="py-4 px-2">
           {% include
-          'partials/dashboard/customer_management/search_customer/sections/person_details.html'
+          'partials/dashboard/customer_management/search_customer/organization_sections/organization_details.html'
           %}
         </div>
         <div x-show="tab === 2" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/search_customer/sections/addresses.html'
+          'partials/dashboard/customer_management/search_customer/organization_sections/contact_persons.html'
           %}
         </div>
         <div x-show="tab === 3" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/search_customer/sections/family_and_relatives.html'
+          'partials/dashboard/customer_management/search_customer/organization_sections/branches.html'
           %}
         </div>
         <div x-show="tab === 4" class="p-4 px-2">
           {% include
-          'partials/dashboard/customer_management/search_customer/sections/job_histories.html'
-          %}
-        </div>
-        <div x-show="tab === 5" class="p-4 px-2">
-          {% include
-          'partials/dashboard/customer_management/search_customer/sections/educations.html'
-          %}
-        </div>
-        <div x-show="tab === 6" class="p-4 px-2">
-          {% include
-          'partials/dashboard/customer_management/search_customer/sections/trainings.html'
-          %}
-        </div>
-        <div x-show="tab === 7" class="p-4 px-2">
-          {% include
-          'partials/dashboard/customer_management/search_customer/sections/documents.html'
+          'partials/dashboard/customer_management/search_customer/organization_sections/documents.html'
           %}
         </div>
       </div>

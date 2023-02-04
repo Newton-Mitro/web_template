@@ -1,0 +1,150 @@
+<div class="p-2">
+  <div
+    class="mb-2 flex w-full items-center gap-4 rounded-lg bg-surface p-2 hover:shadow"
+  >
+    {% include
+    'partials/dashboard/customer_management/search_customer/customer_search_box.html'
+    %}
+  </div>
+
+  <div x-data="{ tab: 1 }" x-cloak class="text-onSurface">
+    <div class="relative flex flex-col overflow-hidden rounded-lg hover:shadow">
+      <div
+        class="flex h-14 items-center justify-between border-b border-gray-200 bg-white px-4"
+      >
+        <div class="flex items-center">
+          <i class="fa-solid fa-circle-info fa-lg"></i>
+          <span class="ml-3">Person Details</span>
+        </div>
+
+        <button
+          class="flex items-center space-x-2 transition-all duration-300 hover:scale-125 hover:cursor-pointer"
+        >
+          <i class="fa-solid fa-pen-to-square fa-lg"></i>
+        </button>
+      </div>
+      <div
+        :class="!sidebarOpen ? 'w-[calc(100vw-70px)]' : 'w-[calc(100vw-336px)]' "
+        class="flex space-x-4 overflow-hidden overflow-x-scroll border-b border-gray-200 bg-pink-50 px-4 scrollbar-thin scrollbar-track-background scrollbar-thumb-primary"
+      >
+        <button
+          type="button"
+          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+          x-on:click="tab = 1"
+          :class="{ 'text-gray-700 border-indigo-500': tab === 1 }"
+        >
+          Personal Info
+        </button>
+        <button
+          type="button"
+          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+          x-on:click="tab = 2"
+          :class="{ 'text-gray-700 border-indigo-500': tab === 2 }"
+        >
+          Addresses
+        </button>
+        <button
+          type="button"
+          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+          x-on:click="tab = 3"
+          :class="{ 'text-gray-700 border-indigo-500': tab === 3 }"
+        >
+          Family & Relatives
+        </button>
+        <button
+          type="button"
+          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+          x-on:click="tab = 4"
+          :class="{ 'text-gray-700 border-indigo-500': tab === 4 }"
+        >
+          Job Histories
+        </button>
+        <button
+          type="button"
+          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+          x-on:click="tab = 5"
+          :class="{ 'text-gray-700 border-indigo-500': tab === 5 }"
+        >
+          Educations
+        </button>
+        <button
+          type="button"
+          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+          x-on:click="tab = 6"
+          :class="{ 'text-gray-700 border-indigo-500': tab === 6 }"
+        >
+          Training
+        </button>
+        <button
+          type="button"
+          class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+          x-on:click="tab = 7"
+          :class="{ 'text-gray-700 border-indigo-500': tab === 7 }"
+        >
+          Documents
+        </button>
+      </div>
+
+      <div
+        class="overflow-hidden overflow-x-scroll border-b bg-surface px-4 scrollbar-thin scrollbar-track-background scrollbar-thumb-primary"
+        style="height: calc(100vh - 382px)"
+      >
+        <div x-show="tab === 1" class="py-4 px-2">
+          {% include
+          'partials/dashboard/customer_management/search_customer/person_sections/person_details.html'
+          %}
+        </div>
+        <div x-show="tab === 2" class="p-4 px-2">
+          {% include
+          'partials/dashboard/customer_management/search_customer/person_sections/addresses.html'
+          %}
+        </div>
+        <div x-show="tab === 3" class="p-4 px-2">
+          {% include
+          'partials/dashboard/customer_management/search_customer/person_sections/family_and_relatives.html'
+          %}
+        </div>
+        <div x-show="tab === 4" class="p-4 px-2">
+          {% include
+          'partials/dashboard/customer_management/search_customer/person_sections/job_histories.html'
+          %}
+        </div>
+        <div x-show="tab === 5" class="p-4 px-2">
+          {% include
+          'partials/dashboard/customer_management/search_customer/person_sections/educations.html'
+          %}
+        </div>
+        <div x-show="tab === 6" class="p-4 px-2">
+          {% include
+          'partials/dashboard/customer_management/search_customer/person_sections/trainings.html'
+          %}
+        </div>
+        <div x-show="tab === 7" class="p-4 px-2">
+          {% include
+          'partials/dashboard/customer_management/search_customer/person_sections/documents.html'
+          %}
+        </div>
+      </div>
+      <div class="flex items-center justify-end gap-4 bg-surface py-2 px-4">
+        <button
+          type="button"
+          class="w-1/2 rounded bg-primary py-2 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant md:w-3/12"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          class="w-1/2 rounded bg-primary py-2 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant md:w-3/12"
+        >
+          Next
+        </button>
+        <button
+          type="button"
+          class="hidden w-1/2 rounded bg-primary py-2 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant md:w-3/12"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

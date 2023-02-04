@@ -1,0 +1,21 @@
+{% import 'shared/components/text-input-macro.html' as textInput %} {% import
+'shared/components/image-input.html' as imageInput %}
+
+<div class="relative grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+  <div class="flex flex-col">
+    {{ textInput.renderTextInput("text", "", "DocumentName", "", "Document
+    Name") }} {{ imageInput.renderImageInput("marrage_doc", "") }}
+  </div>
+  <div class="flex flex-col">
+    {{ textInput.renderTextInput("text", "", "DocumentName", "", "Document
+    Name") }} {{ imageInput.renderImageInput("nid_doc", "") }}
+  </div>
+</div>
+<div class="flex justify-end p-4">
+  <button
+    type="button"
+    class="w-1/2 rounded bg-primary py-2 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant md:w-3/12"
+  >
+    Add Another
+  </button>
+</div>
