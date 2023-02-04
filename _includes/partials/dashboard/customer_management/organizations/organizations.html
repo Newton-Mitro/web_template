@@ -7,21 +7,17 @@
         Organizations
       </h2>
     </div>
-    <div
-      class="flex h-16 items-center justify-between gap-4 p-2 text-primary hover:text-primaryVariant"
-    >
+    <div class="grid grid-cols-1 justify-end gap-4 px-2 py-4 lg:grid-cols-4">
       <button
         @click="displayModalJobCircular=true"
-        class="flex w-1/4 cursor-pointer items-center justify-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant lg:w-2/12"
+        class="flex cursor-pointer items-center justify-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant"
       >
         <i class="fa-solid fa-circle-plus fa-lg mr-2"></i>
         Add Organization
       </button>
-      <div class="flex w-3/4 justify-end gap-4">
-        {% include
-        'partials/dashboard/customer_management/search_customer/customer_search_box.html'
-        %}
-      </div>
+      {% include
+      'partials/dashboard/customer_management/search_customer/customer_search_box.html'
+      %}
     </div>
     <div
       class="mx-2 overflow-auto rounded scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:max-h-[calc(100vh-355px)]"

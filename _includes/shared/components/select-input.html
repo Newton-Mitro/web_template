@@ -1,0 +1,42 @@
+{% macro renderSelectInput( label="", inputFor="" )%}
+<div class="relative w-full text-onSurface" x-data="setup()">
+  <select
+    id="{{ inputFor }}"
+    @change="selected = true"
+    class="peer w-full rounded border-gray-200 bg-surface transition-colors focus:border-primary"
+  >
+    <template x-for="option in options">
+      <option value="option" x-text="option"></option>
+    </template>
+  </select>
+  <label
+    for="{{ inputFor }}"
+    :class="selected ? '-top-2 text-xs text-primary' : ''"
+    class="absolute left-0 top-3 mx-3 cursor-text bg-surface px-1 transition-all duration-200 peer-focus:-top-2 peer-focus:bg-surface peer-focus:text-xs peer-focus:text-primary"
+  >
+    {{ label }}<span class="font-medium text-error"> * </span>
+  </label>
+  <p class="mt-1 hidden text-xs text-error">Error text</p>
+</div>
+
+<script>
+  function setup() {
+    return {
+      selected: false,
+      options: [
+        "Personal",
+        "Dependents",
+        "Employment",
+        "Educational",
+        "Trainings",
+        "Computer",
+        "Language",
+        "Other Info",
+        "References",
+        "Application",
+      ],
+    };
+  }
+</script>
+
+{% endmacro %}

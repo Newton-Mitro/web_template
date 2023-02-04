@@ -3,8 +3,10 @@
 <div
   class="relative mt-4 grid grid-cols-1 gap-4 border border-dashed p-4 md:grid-cols-2 lg:grid-cols-4"
 >
-  {{ macro.renderTextInput("text", "", "Relative Name", "", "RelativePIN") }} {{
-  macro.renderTextInput("text", "", "Select Relationship With Relative", "",
+  {% include
+  'partials/dashboard/customer_management/search_customer/customer_search_box.html'
+  %} {{ macro.renderTextInput("text", "", "Relative Name", "", "RelativePIN") }}
+  {{ macro.renderTextInput("text", "", "Select Relationship With Relative", "",
   "RelationshipWithRelative") }} {{ macro.renderTextInput("text", "", "City",
   "", "City") }}
 </div>

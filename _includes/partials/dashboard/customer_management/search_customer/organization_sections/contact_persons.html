@@ -1,13 +1,16 @@
-{% import 'shared/components/text-input-macro.html' as macro %}
+{% import 'shared/components/text-input-macro.html' as textInput %} {% import
+'shared/components/select-input.html' as selectInput %}
 
-<div
-  class="relative mt-4 grid grid-cols-1 gap-4 border border-dashed p-4 md:grid-cols-2 lg:grid-cols-4"
->
-  {{ macro.renderTextInput("text", "", "Relative Name", "", "RelativePIN") }} {{
-  macro.renderTextInput("text", "", "Select Relationship With Relative", "",
-  "RelationshipWithRelative") }} {{ macro.renderTextInput("text", "", "City",
-  "", "City") }}
+<div class="border border-dashed p-4">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    {% include
+    'partials/dashboard/customer_management/search_customer/customer_search_box.html'
+    %} {{ selectInput.renderSelectInput("Relsation With Family/Relative"
+    ,"relationship") }} {{ textInput.renderTextInput("text", "", "City", "",
+    "City") }}
+  </div>
 </div>
+
 <div class="flex justify-end p-4">
   <button
     type="button"
