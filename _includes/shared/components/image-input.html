@@ -1,0 +1,49 @@
+{% macro renderImageInput(fieldName='photo',fieldLabel='Photo') %}
+<div x-data="showImage()" class="">
+  <div class="w-full">
+    <div>
+      <label class="inline-block text-gray-500">{{fieldLabel}}</label>
+      <div class="flex w-full items-center justify-center">
+        <label
+          class="relative flex h-32 w-full flex-col items-center justify-center border-4 border-dashed hover:border-gray-300 hover:bg-gray-100"
+        >
+          <div class="flex h-full w-full flex-col items-center justify-center">
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center"
+            >
+              <i class="fa-solid fa-image fa-2xl"></i>
+              <p
+                class="pt-4 text-sm tracking-wider text-gray-400 group-hover:text-gray-600"
+              >
+                Select a photo
+              </p>
+            </div>
+            <img id="preview" class="h-full" />
+          </div>
+          <input
+            type="file"
+            class="opacity-0"
+            accept="image/*"
+            @change="showPreview(event)"
+          />
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showImage() {
+    return {
+      showPreview(event) {
+        if (event.target.files.length > 0) {
+          var src = URL.createObjectURL(event.target.files[0]);
+          var preview = document.getElementById("preview");
+          preview.src = src;
+          preview.style.display = "block";
+        }
+      },
+    };
+  }
+</script>
+{% endmacro %}
