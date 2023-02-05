@@ -3,10 +3,19 @@
 <div
   class="relative mt-4 grid grid-cols-1 gap-4 border border-dashed p-4 md:grid-cols-2 lg:grid-cols-4"
 >
-  {{ macro.renderTextInput("text", "", "Relative Name", "", "RelativePIN") }} {{
-  macro.renderTextInput("text", "", "Select Relationship With Relative", "",
-  "RelationshipWithRelative") }} {{ macro.renderTextInput("text", "", "City",
-  "", "City") }}
+  {{ macro.renderTextInput("text", "", "Organization Name", "",
+  "OrganizationName") }} {{ macro.renderTextInput("text", "", "Organization
+  Address", "", "OrganizationAddress") }} {{ macro.renderTextInput("text", "",
+  "Supervisor Name", "", "SupervisorName") }}{{ macro.renderTextInput("text",
+  "", "Supervisor Designation", "", "SupervisorDesignation") }}{{
+  macro.renderTextInput("text", "", "Supervisor Name", "", "SupervisorName")
+  }}{{ macro.renderTextInput("text", "", "Supervisor Phone", "",
+  "SupervisorPhone") }}{{ macro.renderTextInput("text", "", "Designation", "",
+  "Designation") }}{{ macro.renderTextInput("text", "", "Job Responsibilities",
+  "", "JobResponsibilities") }} {{ macro.renderTextInput("text", "", "Salary",
+  "", "salary") }}{{ macro.renderTextInput("text", "", "Start Date", "",
+  "StartDate") }}{{ macro.renderTextInput("text", "", "End Date", "", "EndDate")
+  }}
 </div>
 <div class="flex justify-end p-4">
   <button

@@ -1,12 +1,14 @@
 {% import 'shared/components/InputBox.html' as textInput %} {% import
-'shared/components/DropdownSelect.html' as selectInput %}
+'shared/components/DropdownSelect.html' as selectInput %} {% import
+'shared/components/CustomerSearchBox.html' as searchBox %}
 
 <div class="border border-dashed p-4">
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-    {% include 'shared/components/CustomerSearchBox.html' %} {{
-    selectInput.renderSelectInput("Relsation With Family/Relative"
-    ,"relationship") }} {{ textInput.renderTextInput("text", "", "City", "",
-    "City") }}
+    {{ searchBox.renderSearchBox() }} {{ textInput.renderTextInput("text", "",
+    "Designation", "", "Designation") }} {{ textInput.renderTextInput("number",
+    "", "Contact Number", "", "ContactNumber") }} {{
+    textInput.renderTextInput("number", "", "Contact Email", "", "ContactEmail")
+    }}
   </div>
 </div>
 

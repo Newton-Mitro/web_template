@@ -1,14 +1,15 @@
 {% import 'shared/components/InputBox.html' as textInput %} {% import
-'shared/components/ImageInput.html' as imageInput %}
+'shared/components/ImageInput.html' as imageInput %} {% import
+'shared/components/DropdownSelect.html' as dropdownSelect %}
 
 <div class="relative grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-  <div class="flex flex-col">
-    {{ textInput.renderTextInput("text", "", "DocumentName", "", "Document
-    Name") }} {{ imageInput.renderImageInput("marrage_doc", "") }}
+  <div class="flex flex-col gap-1">
+    {{ dropdownSelect.renderSelectInput("Select Document Type", "") }} {{
+    imageInput.renderImageInput("marrage_doc", "") }}
   </div>
-  <div class="flex flex-col">
-    {{ textInput.renderTextInput("text", "", "DocumentName", "", "Document
-    Name") }} {{ imageInput.renderImageInput("nid_doc", "") }}
+  <div class="flex flex-col gap-1">
+    {{ dropdownSelect.renderSelectInput("Select Document Type", "") }} {{
+    imageInput.renderImageInput("nid_doc", "") }}
   </div>
 </div>
 <div class="flex justify-end p-4">

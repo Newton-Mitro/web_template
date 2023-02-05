@@ -1,14 +1,15 @@
-{% import 'shared/components/InputBox.html' as macro %}
+{% import 'shared/components/InputBox.html' as textInput %} {% import
+'shared/components/DropdownSelect.html' as dropdownSelect %} {% import
+'shared/components/CustomerSearchBox.html' as searchBox %}
 
-<div
-  class="relative mt-4 grid grid-cols-1 gap-4 border border-dashed p-4 md:grid-cols-2 lg:grid-cols-4"
->
-  {% include 'shared/components/CustomerSearchBox.html' %} {{
-  macro.renderTextInput("text", "", "Relative Name", "", "RelativePIN") }} {{
-  macro.renderTextInput("text", "", "Select Relationship With Relative", "",
-  "RelationshipWithRelative") }} {{ macro.renderTextInput("text", "", "City",
-  "", "City") }}
+<div class="border border-dashed p-4">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+    {{ searchBox.renderSearchBox() }} {{
+    dropdownSelect.renderSelectInput("Relation With Family/Relative", "") }} {{
+    dropdownSelect.renderSelectInput("Family/Relative Relation With Me", "") }}
+  </div>
 </div>
+
 <div class="flex justify-end p-4">
   <button
     type="button"
