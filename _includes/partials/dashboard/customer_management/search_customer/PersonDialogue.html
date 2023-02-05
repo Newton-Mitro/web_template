@@ -1,0 +1,16 @@
+<div
+  class="duration-400 fixed inset-0 z-50 flex translate-x-0 items-center justify-center overflow-hidden bg-gray-900 bg-opacity-90 p-4 text-onSurface transition-all"
+  :class="displayPersonDialogue? 'translate-x-0' : '-translate-x-full'"
+>
+  <button
+    class="absolute top-10 right-10 w-10 font-semibold text-surface transition-all duration-300 hover:scale-150 hover:text-error"
+    @click="displayPersonDialogue=false"
+  >
+    <i class="fa-solid fa-xmark fa-2xl"></i>
+  </button>
+  <div class="w-full md:w-10/12 lg:w-8/12">
+    {% include
+    'partials/dashboard/customer_management/search_customer/PersonViewModel.html'
+    %}
+  </div>
+</div>

@@ -1,7 +1,7 @@
 {% import 'shared/components/CustomerSearchBox.html' as searchBox %}
 <div class="h-full w-full p-2">
   <div
-    class="select-none overflow-auto rounded-lg bg-surface scrollbar-thin scrollbar-track-background scrollbar-thumb-primary hover:shadow md:min-h-[calc(100vh-160px)]"
+    class="select-none overflow-auto rounded bg-surface scrollbar-thin scrollbar-track-background scrollbar-thumb-primary hover:shadow md:min-h-[calc(100vh-160px)]"
   >
     <div class="px-2 pt-6">
       <h2 class="text-center text-xl font-bold uppercase lg:text-2xl">
@@ -10,7 +10,7 @@
     </div>
     <div class="grid grid-cols-1 justify-end gap-4 px-2 py-4 lg:grid-cols-4">
       <button
-        @click="displayModalJobCircular=true"
+        @click="displayOrganizationDialogue=true"
         class="flex cursor-pointer items-center justify-center rounded bg-primary py-2 px-4 text-onPrimary transition-all duration-300 hover:scale-105 hover:bg-primaryVariant hover:text-onPrimaryVariant"
       >
         <i class="fa-solid fa-circle-plus fa-lg mr-2"></i>
@@ -19,7 +19,7 @@
       {{ searchBox.renderSearchBox() }}
     </div>
     <div
-      class="mx-2 overflow-auto rounded scrollbar-thin scrollbar-track-background scrollbar-thumb-primary md:max-h-[calc(100vh-316px)]"
+      class="mx-2 h-[calc(100vh-316px)] overflow-auto rounded scrollbar-thin scrollbar-track-background scrollbar-thumb-primary"
       :class="!sidebarOpen ? 'md:w-[calc(100vw-86px)]' : 'md:w-[calc(100vw-350px)]' "
     >
       <table

@@ -11,10 +11,9 @@
     </div>
   </div>
   {{ dropdownSelect.renderSelectInput("Select Country", "Country") }} {{
-  macro.renderTextInput("text", "", "State Province Region", "",
-  "StateProvinceRegion") }} {{ macro.renderTextInput("text", "", "City", "",
-  "City") }} {{ dropdownSelect.renderSelectInput("Select Division", "Divistion")
-  }} {{ dropdownSelect.renderSelectInput("Select District", "District") }} {{
+  macro.renderTextInput("text", "", "City", "", "City") }} {{
+  dropdownSelect.renderSelectInput("Select Division", "Divistion") }} {{
+  dropdownSelect.renderSelectInput("Select District", "District") }} {{
   dropdownSelect.renderSelectInput("Select Upazila/Thana", "UpazilaThana") }} {{
   dropdownSelect.renderSelectInput("Select Village", "Village") }}{{
   macro.renderTextInput("text", "", "Post Office", "", "PostOffice") }}{{

@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/5041da7c8e.js" crossorigin="anonymous"></script>
   </head>
   <body
-    x-data="{displayModalacc: false, displayModalJobCircular: false,}"
+    x-data="{displayModalacc: false, displayModalJobCircular: false,displayPersonDialogue: false,displayOrganizationDialogue: false,}"
     @scroll.window="window.pageYOffset > 60 ? scrollFromTop = true : scrollFromTop = false"
     :class=" {'overflow-hidden' : topNavOpen, 
   'overflow-auto': !topNavOpen }"
@@ -41,6 +41,10 @@
       </div>
       {% include 'partials/dashboard/modals/accounts.html' %} {% include
       'partials/dashboard/modals/add_job_circular.html' %}
+      {% include
+      'partials/dashboard/customer_management/search_customer/PersonDialogue.html' %}
+      {% include
+      'partials/dashboard/customer_management/search_customer/OrganizationDialogue.html' %}
     </div>
 
   </body>
