@@ -33,78 +33,78 @@
       </div>
     </div>
     <div class="grid-cols-1 md:col-span-2">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput("text", "", "Full Name ","*", "full_name") }}
     </div>
     <div class="-mt-5 grid-cols-1 md:col-span-2 md:row-span-2">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput("text", "", "Father's Name","*", "fathers_name") }}
     </div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
     <div class="grid grid-cols-1">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput("text", "", "Mother's Name", "*", "mothers_name") }}
     </div>
     <div class="grid grid-cols-1">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput("date", "", "Date of Birth", "*", "dbo") }}
     </div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
     <div class="grid grid-cols-1">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput("number", "", "National ID Number", "*", "nid") }}
     </div>
 
     <div class="grid grid-cols-1">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput("number", "", "E-Tin Number", "", "etin") }}
     </div>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
     <div class="grid grid-cols-1">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput("number", "", "Passport Number", "", "passport") }}
     </div>
 
     <div class="grid grid-cols-1">
-      {% import 'shared/components/select-input.html' as macro %} {{
+      {% import 'shared/components/DropdownSelect.html' as macro %} {{
       macro.renderSelectInput( "Select Gender","*", "gender") }}
     </div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
     <div class="grid grid-cols-1">
-      {% import 'shared/components/select-input.html' as macro %} {{
+      {% import 'shared/components/DropdownSelect.html' as macro %} {{
       macro.renderSelectInput( "Select Blood Group","*", "blood_group") }}
     </div>
     <div class="grid grid-cols-1">
-      {% import 'shared/components/select-input.html' as macro %} {{
+      {% import 'shared/components/DropdownSelect.html' as macro %} {{
       macro.renderSelectInput( "Select Religion","*", "religion") }}
     </div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
     <div class="grid grid-cols-1">
-      {% import 'shared/components/select-input.html' as macro %} {{
+      {% import 'shared/components/DropdownSelect.html' as macro %} {{
       macro.renderSelectInput( "Select Nationality", "*", "nationality") }}
     </div>
     <div class="grid grid-cols-1">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput( "number","", "Expected Salary", "*", "salary") }}
     </div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
     <div class="grid grid-cols-1">
-      {% import 'shared/components/select-input.html' as macro %} {{
+      {% import 'shared/components/DropdownSelect.html' as macro %} {{
       macro.renderSelectInput( "Select Marital Status", "*", "marital") }}
     </div>
     <div class="grid grid-cols-1">
-      {% import 'shared/components/text-input-macro.html' as macro %} {{
+      {% import 'shared/components/InputBox.html' as macro %} {{
       macro.renderTextInput("text", "", "Spouse Name ", "*", "spouse") }}
     </div>
   </div>
@@ -115,17 +115,17 @@
     <div class="w-full rounded-lg border border-dashed p-2 text-onSurface">
       <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div class="grid grid-cols-1">
-          {% import 'shared/components/text-input-macro.html' as macro %} {{
+          {% import 'shared/components/InputBox.html' as macro %} {{
           macro.renderTextInput("text", "", "Name ", "*", "ecnnr") }}
         </div>
         <div class="grid grid-cols-1">
-          {% import 'shared/components/text-input-macro.html' as macro %} {{
+          {% import 'shared/components/InputBox.html' as macro %} {{
           macro.renderTextInput("number", "", " Number", "*", "ecnnr") }}
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select Relation", "*", "relation") }}
         </div>
       </div>
@@ -138,30 +138,30 @@
     </h6>
     <div class="border border-dashed p-2">
       <div class="grid grid-cols-1">
-        {% import 'shared/components/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/InputBox.html' as macro %} {{
         macro.renderTextInput("text", "", "House/Road/Block", "*",
         "present_house_road_block") }}
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select Divistion","*", "present_division")
           }}
         </div>
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select District","*", "present_district") }}
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select Police Station","*",
           "present_police_station") }}
         </div>
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select Village","*", "present_village") }}
         </div>
       </div>
@@ -174,31 +174,31 @@
     </h6>
     <div class="border border-dashed p-2">
       <div class="grid grid-cols-1">
-        {% import 'shared/components/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/InputBox.html' as macro %} {{
         macro.renderTextInput("text", "", "House/Road/Block", "*",
         "permanent_house_road_block") }}
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select Divistion","*", "permanent_division")
           }}
         </div>
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select District","*", "permanent_district")
           }}
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select Police Station","*",
           "permanent_police_station") }}
         </div>
         <div class="grid grid-cols-1">
-          {% import 'shared/components/select-input.html' as macro %} {{
+          {% import 'shared/components/DropdownSelect.html' as macro %} {{
           macro.renderSelectInput( "Select Village","*", "permanent_village") }}
         </div>
       </div>
@@ -211,15 +211,15 @@
     <div class="border border-dashed p-2">
       <div class="grid grid-cols-1 gap-2 md:grid-cols-3 md:gap-8">
         <div class="grid grid-cols-1">
-          {% import 'shared/components/text-input-macro.html' as macro %} {{
+          {% import 'shared/components/InputBox.html' as macro %} {{
           macro.renderTextInput("text", "", "Work ", "*", "work") }}
         </div>
         <div class="grid grid-cols-1">
-          {% import 'shared/components/text-input-macro.html' as macro %} {{
+          {% import 'shared/components/InputBox.html' as macro %} {{
           macro.renderTextInput("text", "", "Home ", "*", "home") }}
         </div>
         <div class="grid grid-cols-1">
-          {% import 'shared/components/text-input-macro.html' as macro %} {{
+          {% import 'shared/components/InputBox.html' as macro %} {{
           macro.renderTextInput( "text","", "Cellphone ", "*", "cellphone") }}
         </div>
       </div>
@@ -230,12 +230,12 @@
     <div class="border border-dashed p-2">
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
         <div class="grid grid-cols-1">
-          {% import 'shared/components/text-input-macro.html' as macro %} {{
+          {% import 'shared/components/InputBox.html' as macro %} {{
           macro.renderTextInput("text", "", "Email (Official)", "*", "emailo")
           }}
         </div>
         <div class="grid grid-cols-1">
-          {% import 'shared/components/text-input-macro.html' as macro %} {{
+          {% import 'shared/components/InputBox.html' as macro %} {{
           macro.renderTextInput("text", "", "Email (Personal)", "*", "emailp")
           }}
         </div>

@@ -1,10 +1,14 @@
 <div class="p-2">
-  <div
-    class="mb-2 grid w-full grid-cols-1 items-center gap-4 rounded-lg bg-surface p-2 hover:shadow lg:grid-cols-4"
-  >
-    {% include
-    'partials/dashboard/customer_management/search_customer/customer_search_box.html'
-    %}
+  <div class="mb-2 rounded-lg bg-surface p-2 hover:shadow">
+    <div
+      class="flex items-center justify-center py-2 text-xl font-bold uppercase lg:text-2xl"
+    >
+      Customer Search
+    </div>
+    <hr class="mb-2" />
+    <div class="grid w-full grid-cols-1 items-center gap-4 lg:grid-cols-4">
+      {% include 'shared/components/CustomerSearchBox.html' %}
+    </div>
   </div>
 
   <div x-data="{ tab: 1 }" x-cloak class="text-onSurface">
@@ -63,7 +67,7 @@
 
       <div
         class="overflow-hidden overflow-x-scroll border-b bg-surface px-4 scrollbar-thin scrollbar-track-background scrollbar-thumb-primary"
-        style="height: calc(100vh - 382px)"
+        style="height: calc(100vh - 406px)"
       >
         <div x-show="tab === 1" class="py-4 px-2">
           {% include

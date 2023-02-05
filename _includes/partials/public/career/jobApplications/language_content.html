@@ -25,19 +25,19 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-4 md:gap-8">
       <div class="grid grid-cols-1">
-        {% import 'shared/components/text-input-macro.html' as macro %} {{
+        {% import 'shared/components/InputBox.html' as macro %} {{
         macro.renderTextInput("text", "", "Language Name ","", "langname") }}
       </div>
       <div class="grid grid-cols-1">
-        {% import 'shared/components/select-input.html' as macro %} {{
+        {% import 'shared/components/DropdownSelect.html' as macro %} {{
         macro.renderSelectInput( "Reading","", "blood_group") }}
       </div>
       <div class="grid grid-cols-1">
-        {% import 'shared/components/select-input.html' as macro %} {{
+        {% import 'shared/components/DropdownSelect.html' as macro %} {{
         macro.renderSelectInput( "Writing","", "blood_group") }}
       </div>
       <div class="grid grid-cols-1">
-        {% import 'shared/components/select-input.html' as macro %} {{
+        {% import 'shared/components/DropdownSelect.html' as macro %} {{
         macro.renderSelectInput( "Speaking","", "blood_group") }}
       </div>
     </div>

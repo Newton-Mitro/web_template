@@ -319,7 +319,7 @@
             </div>
             <form class="w-full">
               <div class="my-6">
-                {% import 'shared/components/text-input-macro.html' as macro %}
+                {% import 'shared/components/InputBox.html' as macro %}
                 {{
                   macro.renderTextInput(
                     "text",
@@ -335,7 +335,7 @@
                 class="relative my-3 w-full text-onSurface"
                 x-data="{ hasValue: '',showpassword : false }"
               >
-                {% import 'shared/components/showpassword-macro.html' as macro %}
+                {% import 'shared/components/PasswordInput.html' as macro %}
                 {{
                   macro.renderShowPassword(
                     "exampleCheck2",
