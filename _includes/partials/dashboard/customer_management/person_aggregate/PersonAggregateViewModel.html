@@ -5,7 +5,7 @@
     >
       <div class="flex items-center">
         <i class="fa-solid fa-circle-info fa-lg"></i>
-        <span class="ml-3">Organization Details</span>
+        <span class="ml-3">Person Create/Edit/View</span>
       </div>
 
       <button
@@ -15,7 +15,7 @@
       </button>
     </div>
     <div
-      :class="!sidebarOpen ? 'w-[calc(100vw-70px)]' : 'w-[calc(100vw-336px)]' "
+      :class="!sidebarOpen ? 'min-w-min lg:w-[calc(100vw-70px)]' : 'min-w-min lg:w-[calc(100vw-336px)]' "
       class="flex space-x-4 overflow-hidden overflow-x-scroll border-b border-gray-200 bg-pink-50 px-4 scrollbar-thin scrollbar-track-background scrollbar-thumb-primary"
     >
       <button
@@ -24,7 +24,7 @@
         x-on:click="tab = 1"
         :class="{ 'text-gray-700 border-indigo-500': tab === 1 }"
       >
-        Organization Info
+        Personal Info
       </button>
       <button
         type="button"
@@ -32,7 +32,7 @@
         x-on:click="tab = 2"
         :class="{ 'text-gray-700 border-indigo-500': tab === 2 }"
       >
-        Contact Persons
+        Addresses
       </button>
       <button
         type="button"
@@ -40,13 +40,37 @@
         x-on:click="tab = 3"
         :class="{ 'text-gray-700 border-indigo-500': tab === 3 }"
       >
-        Branches
+        Family & Relatives
       </button>
       <button
         type="button"
         class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
         x-on:click="tab = 4"
         :class="{ 'text-gray-700 border-indigo-500': tab === 4 }"
+      >
+        Job Histories
+      </button>
+      <button
+        type="button"
+        class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+        x-on:click="tab = 5"
+        :class="{ 'text-gray-700 border-indigo-500': tab === 5 }"
+      >
+        Educations
+      </button>
+      <button
+        type="button"
+        class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+        x-on:click="tab = 6"
+        :class="{ 'text-gray-700 border-indigo-500': tab === 6 }"
+      >
+        Training
+      </button>
+      <button
+        type="button"
+        class="border-t-2 border-transparent py-2 px-1 font-medium tracking-wide text-gray-400 focus:outline-none hover:text-gray-500"
+        x-on:click="tab = 7"
+        :class="{ 'text-gray-700 border-indigo-500': tab === 7 }"
       >
         Documents
       </button>
@@ -58,22 +82,37 @@
     >
       <div x-show="tab === 1" class="py-4 px-2">
         {% include
-        'partials/dashboard/customer_management/search_customer/organization_sections/organization_details.html'
+        'partials/dashboard/customer_management/person_aggregate/sections/PersonViewModel.html'
         %}
       </div>
       <div x-show="tab === 2" class="p-4 px-2">
         {% include
-        'partials/dashboard/customer_management/search_customer/organization_sections/contact_persons.html'
+        'partials/dashboard/customer_management/person_aggregate/sections/Addresses.html'
         %}
       </div>
       <div x-show="tab === 3" class="p-4 px-2">
         {% include
-        'partials/dashboard/customer_management/search_customer/organization_sections/branches.html'
+        'partials/dashboard/customer_management/person_aggregate/sections/FamilyAndRelatives.html'
         %}
       </div>
       <div x-show="tab === 4" class="p-4 px-2">
         {% include
-        'partials/dashboard/customer_management/search_customer/organization_sections/documents.html'
+        'partials/dashboard/customer_management/person_aggregate/sections/JobHistories.html'
+        %}
+      </div>
+      <div x-show="tab === 5" class="p-4 px-2">
+        {% include
+        'partials/dashboard/customer_management/person_aggregate/sections/Educations.html'
+        %}
+      </div>
+      <div x-show="tab === 6" class="p-4 px-2">
+        {% include
+        'partials/dashboard/customer_management/person_aggregate/sections/Trainings.html'
+        %}
+      </div>
+      <div x-show="tab === 7" class="p-4 px-2">
+        {% include
+        'partials/dashboard/customer_management/person_aggregate/sections/Documents.html'
         %}
       </div>
     </div>
