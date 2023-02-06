@@ -1,0 +1,768 @@
+<ul
+  x-data="{ firstLevelOpen: 0, secondLevelOpen: 0 }"
+  class="flex cursor-pointer flex-col justify-center divide-y divide-dashed text-onSurface"
+>
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+  >
+    <a href="/dashboard_pages/" class="flex w-full items-center py-2 px-4">
+      <div class="flex items-center">
+        <i class="fa-brands fa-fort-awesome fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">Home</span>
+      </div>
+    </a>
+  </li>
+
+  {% include 'partials/dashboard/AuthenticatedSidebar/MenuItem.html' %}
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 2 ? firstLevelOpen = 2 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-earth-asia fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">Online Service Reg.</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===2">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=2">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container2">
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="/dashboard_pages/me" class="flex w-full">
+            <i class="fa-solid fa-registered fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Registerations</span>
+          </a>
+        </li>
+
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-registered fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Make Registration Entry</span
+            >
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 3 ? firstLevelOpen = 3 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-feather fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">Account Application Mgmt.</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===3">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=3">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container3">
+        <li
+          class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+        >
+          <div
+            @click="secondLevelOpen !== 11 ? secondLevelOpen = 11 : secondLevelOpen = 0"
+            class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+          >
+            <div class="flex items-center">
+              <i class="fa-solid fa-feather fa-lg py-3"></i>
+              <span class="mx-4" x-show="sidebarOpen">Other Mgmt.</span>
+            </div>
+            <div class="">
+              <span x-show="sidebarOpen">
+                <template x-if="secondLevelOpen===11">
+                  <i class="fa-solid fa-chevron-up"></i>
+                </template>
+                <template x-if="secondLevelOpen!=11">
+                  <i class="fa-solid fa-chevron-down"></i> </template
+              ></span>
+            </div>
+          </div>
+          <div
+            x-bind:style="secondLevelOpen == 11 ? 'max-height: ' + $refs.container11.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+            class="overflow-hidden text-justify transition-all duration-700"
+          >
+            <ul class="cursor-pointer" x-ref="container11">
+              <li
+                class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+                :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+              >
+                <a href="/dashboard_pages/accounts" class="flex w-full">
+                  <i class="fa-solid fa-universal-access fa-lg py-3"></i>
+                  <span x-show="sidebarOpen" class="pl-2">Others One</span>
+                </a>
+              </li>
+              <li
+                class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+                :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+              >
+                <a href="/dashboard_pages/accounts" class="flex w-full">
+                  <i class="fa-solid fa-scroll-torah fa-lg py-3"></i>
+                  <span x-show="sidebarOpen" class="pl-2">Others Two</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-piggy-bank fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Make A/C Opening Req.</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-piggy-bank fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Account Opening Requests</span
+            >
+          </a>
+        </li>
+
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-user-slash fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Make A/C Closing Req.</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-user-slash fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Account Closing Requests</span
+            >
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-file-pen fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Make Info Update Req.</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-file-pen fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Information Update Reqests</span
+            >
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-recycle fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Make A/C Renew Req.</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-recycle fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Account Renew Requests</span
+            >
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 4 ? firstLevelOpen = 4 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-piggy-bank fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">Subsidiary Ledger Mgmt.</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===4">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=4">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container4">
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="/dashboard_pages/accounts" class="flex w-full">
+            <i class="fa-solid fa-universal-access fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">My Accounts</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="/dashboard_pages/accounts" class="flex w-full">
+            <i class="fa-solid fa-scroll-torah fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Subsidiary Ledger/Accounts</span
+            >
+          </a>
+        </li>
+
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-regular fa-folder-firstLevelOpen fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Open An Account</span>
+          </a>
+        </li>
+
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-house-lock fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Close An Account</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-magnifying-glass-chart fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Account Statement</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-calendar-days fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Account Schedules</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-hand-holding-dollar fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Account Collaterals</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-money-check-dollar fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Account Cheques</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 5 ? firstLevelOpen = 5 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-money-bill-trend-up fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">General Accounting</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===5">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=5">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container5">
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-chart-line fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Charts Of Account</span>
+          </a>
+        </li>
+
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-receipt fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Ledgers</span>
+          </a>
+        </li>
+
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-coins fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Debit/Payment Voucher</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-coins fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Credit/Receipt Voucher</span
+            >
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-coins fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Non-Cash/Transfer Voucher</span
+            >
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-coins fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Contra Voucher</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-brands fa-resolving fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Ledger Statement</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-brands fa-resolving fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Trial Balance</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-brands fa-resolving fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Cash Flow Report</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-brands fa-resolving fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Profit/Loss Report</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-brands fa-resolving fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Balance Sheet Report</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 6 ? firstLevelOpen = 6 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-sack-dollar fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">Subsidiary Voucher Entry</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===6">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=6">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container6">
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-coins fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Daily Collection</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-coins fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Debit/Payment Voucher</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-coins fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Credit/Receipt Voucher</span
+            >
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-coins fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"
+              >Non-Cash/Transfer Voucher</span
+            >
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 7 ? firstLevelOpen = 7 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-address-card fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">Card Management</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===7">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=7">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 7 ? 'max-height: ' + $refs.container7.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container7">
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-address-card fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Cards</span>
+          </a>
+        </li>
+
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-address-card fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"> Transfer To Bank</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 8 ? firstLevelOpen = 8 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-handshake fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">Recruitment</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===8">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=8">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 8 ? 'max-height: ' + $refs.container8.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container8">
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="/dashboard_pages/job_circular/" class="flex w-full">
+            <i class="fa-solid fa-handshake fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2">Job Circulars</span>
+          </a>
+        </li>
+
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <i class="fa-solid fa-handshake fa-lg py-3"></i>
+            <span x-show="sidebarOpen" class="pl-2"> Job Applications</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 9 ? firstLevelOpen = 9 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-hand fa-lg py-3"></i>
+
+        <span class="mx-4" x-show="sidebarOpen">Attendance Management</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===9">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=9">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 9 ? 'max-height: ' + $refs.container9.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container9">
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+              />
+            </svg>
+            <span x-show="sidebarOpen" class="pl-2">Devices</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li
+    class="w-full bg-surface text-onSurface transition-colors duration-300 hover:bg-primary hover:text-onPrimary"
+  >
+    <div
+      @click="firstLevelOpen !== 10 ? firstLevelOpen = 10 : firstLevelOpen = 0"
+      class="group flex w-full items-center justify-between py-2 px-4 hover:font-bold"
+    >
+      <div class="flex items-center">
+        <i class="fa-solid fa-head-side-cough fa-lg py-3"></i>
+        <span class="mx-4" x-show="sidebarOpen">Leave Management</span>
+      </div>
+      <div class="">
+        <span x-show="sidebarOpen">
+          <template x-if="firstLevelOpen===10">
+            <i class="fa-solid fa-chevron-up"></i>
+          </template>
+          <template x-if="firstLevelOpen!=10">
+            <i class="fa-solid fa-chevron-down"></i> </template
+        ></span>
+      </div>
+    </div>
+
+    <div
+      x-bind:style="firstLevelOpen == 10 ? 'max-height: ' + $refs.container10.scrollHeight + 'px' : 'max-height: ' + 0 + 'px'"
+      class="overflow-hidden text-justify transition-all duration-700"
+    >
+      <ul class="cursor-pointer" x-ref="container10">
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+              />
+            </svg>
+            <span x-show="sidebarOpen" class="pl-2">Holliday's</span>
+          </a>
+        </li>
+        <li
+          class="flex items-center bg-surface px-4 py-2 text-onSurface transition-all duration-300 hover:bg-primary hover:font-bold hover:text-onPrimary"
+          :class="sidebarOpen ? 'hover:translate-x-10' : '' "
+        >
+          <a href="" class="flex w-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+              />
+            </svg>
+            <span x-show="sidebarOpen" class="pl-2">Leave Applications</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>
